@@ -1,0 +1,25 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./resets";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+*,
+html {
+	font-family: $lato;
+	font-size: 14px;
+	@media screen and (min-width: 768px) {
+		font-size: 16px;
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+body {
+	font-family: $lato;
+	font-size: 98%;
+}

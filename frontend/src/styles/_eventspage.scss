@@ -1,0 +1,101 @@
+.eventspage {
+  .hero {
+    &-content {
+      gap: 1rem;
+      position: relative;
+
+      &-left {
+        flex: 2;
+
+        &-top {
+          padding: 1.5rem 0.625rem 1.5rem 1.875rem;
+          border-radius: 5px 5px 0 0;
+          background-color: $success;
+          color: $white;
+        }
+
+        &-bottom {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          gap: 1rem;
+          padding: 2rem;
+
+          .eventcal {
+            border-left: 7px solid $orange;
+            box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.05);
+            transition: 0.5s box-shadow ease-in-out;
+
+            &-top {
+              .left {
+                color: $pale-gray;
+              }
+            }
+
+            .right {
+              color: $active-green;
+            }
+          }
+
+          .eventcal:hover {
+            box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.15);
+          }
+        }
+
+        .middle-bar {
+          padding: 1.5rem 0.625rem 1.5rem 1.875rem;
+          border-radius: 5px 5px 0 0;
+          background-color: $pale-gray;
+          color: $white;
+        }
+      }
+
+      &-right {
+        flex: 1;
+
+        .overview {
+          position: sticky;
+          top: 0;
+
+          .top {
+            padding: 2rem 2rem 17.5rem 2rem;
+            border: 2px solid #c4c4c4;
+          }
+
+          &-base {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 2px solid #c4c4c4;
+            border-radius: 5px;
+            gap: 1rem;
+
+            .p1 {
+              color: $pale-gray;
+            }
+          }
+
+          .bottom {
+            height: 14.625rem;
+            padding: 2rem;
+            border: 1px solid $celadon-green;
+            border-radius: 5px;
+            background-color: $celadon-green;
+          }
+        }
+      }
+    }
+  }
+
+  .gallery {
+    &-top {
+      padding: 1.5rem 0.625rem 1.5rem 1.875rem;
+      border-radius: 5px 5px 0 0;
+      background-color: $pale-gray;
+    }
+
+    &-bottom {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+}
