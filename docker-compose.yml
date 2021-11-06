@@ -1,0 +1,87 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: bdmis_frontend
+    image: pin4eva/bdmis_frontend
+    environment:
+      - NODE_ENV=production
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - cms
+
+  dashboard:
+    container_name: bdmis_dashboard
+    image: pin4eva/bdmis_dashboard
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    command: yarn server -s build -l 3001
+
+  cms:
+    container_name: bdmis_cms
+    image: pin4eva/bdmis_cms
+    build:
+      context: ./cms
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8001
+      - NODE_ENV=production
+    env_file:
+      - ./cms/.env
+    depends_on:
+      - mongo
+
+  api:
+    container_name: bdmis_api
+    image: pin4eva/bdmis_api
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      - DOCKER=true
+    env_file:
+      - ./server/.env
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    command: yarn start:prod
+    depends_on:
+      - mongo
+
+  nginx:
+    container_name: bdmis_nginx
+    image: pin4eva/bdmis_nginx
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - certbot-data:/etc/letsencrypt
+    depends_on:
+      - cms
+      - frontend
+
+  mongo:
+    container_name: bdmis_mongo
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - 27018:27017
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+  certbot-data:
