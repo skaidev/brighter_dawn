@@ -3,8 +3,9 @@
     &-section {
       gap: 2rem;
 
-      .left {
-        &-top {
+      &-left {
+        flex: 2;
+        .left-top {
           .input-group {
             padding: 0.3rem 0.3rem 0.3rem 1rem;
             width: 100%;
@@ -13,42 +14,10 @@
             background-color: $white;
           }
         }
-        &-middle {
-          &-1 {
-            .left {
-              background: url("/images/pNImage.png") no-repeat;
-              background-position: center;
-              background-size: cover;
-              flex: 2;
-            }
-            .right {
-              background: url("/images/blurImg.png") no-repeat;
-              background-position: center;
-              background-size: cover;
-              flex: 1;
-            }
-          }
-        }
-        &-bottom {
-          gap: 2rem;
-        }
       }
 
-      .right {
-        padding: 2rem 2rem 0 2rem;
-        border: 2px solid #c4c4c4;
-
-        &-base {
-          margin-bottom: 1rem;
-          padding: 0.5rem;
-          border: 2px solid #c4c4c4;
-          border-radius: 5px;
-          gap: 1rem;
-
-          .p1 {
-            color: $pale-gray;
-          }
-        }
+      &-right {
+        flex: 1;
       }
     }
   }
@@ -67,7 +36,7 @@
 
         &:hover {
           border: 2px solid rgba(196, 196, 196, 0.69);
-          transition: 3s;
+          transition: 0.5s box-shadow ease-in-out;
         }
 
         .right {

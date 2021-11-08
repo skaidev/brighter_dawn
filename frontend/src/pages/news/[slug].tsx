@@ -14,6 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { apolloStrapi } from "apollo";
 import { GET_ARTICLE, GET_ARTICLES } from "apollo/queries/article.query";
+import SingleNewsComp from "components/article/SingleNewsComp";
 import HeaderComp from "components/HeaderComp";
 import { IArticle } from "interface/article.interface";
 import FrontLayout from "layout/FrontLayout";
@@ -53,7 +54,8 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 						</div>
 						<aside className="right">
 							<div className="right-top">
-								<div className="">
+								{/* <SingleNewsComp /> */}
+								{/* <div className="">
 									<p className="josefin fs-24 fw-700 text-capitalize">
 										upcoming events
 									</p>
@@ -68,9 +70,9 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 										<EventCal />
 									</div>
 									<p className=" text-end">See all</p>
-								</div>
+								</div> */}
 							</div>
-							<div className="right-bottom mt-5 text-center">
+							{/* <div className="right-bottom mt-5 text-center">
 								<p className="josefin fs-24 fw-700">Upcoming Events</p>
 								<p className="josefin fw-700 fs-20 mt-5">
 									Dec 25th
@@ -84,7 +86,7 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 									</span>
 								</p>
 								<p className="fw-700">Christmas Party</p>
-							</div>
+							</div> */}
 						</aside>
 					</section>
 				</main>
@@ -136,100 +138,6 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 								</div>
 							);
 						})}
-					</div>
-				</section>
-
-				<section className="event">
-					<div className=" container mt-5 pt-5 pb-5">
-						<p className="josefin fs-36 fw-400 text-capitalize">
-							brighter dawn
-						</p>
-						<p className="josefin fs-36 fw-700 text-capitalize">
-							upcoming events
-						</p>
-						<div className="event-sect">
-							<div className="event-sect-img me-3">
-								<img
-									src="/images/eventImg_1.png"
-									className=" img-fluid"
-									alt=""
-								/>
-								<ul className=" d-flex justify-content-between p-0">
-									<li className="fs-12 px-1">Childrens Day</li>
-									<li className="fs-12">
-										<FontAwesomeIcon
-											icon={faCalendarAlt}
-											width={7}
-											className="me-1"
-										/>
-										27th May 2022
-									</li>
-								</ul>
-							</div>
-							<div className="event-sect-img me-3">
-								<img
-									src="/images/eventImg_2.png"
-									className=" img-fluid"
-									alt=""
-								/>
-								<ul className=" d-flex justify-content-between p-0">
-									<li className="fs-12 px-1">Childrens Day</li>
-									<li className="fs-12">
-										<FontAwesomeIcon
-											icon={faCalendarAlt}
-											width={7}
-											className="me-1"
-										/>
-										27th May 2022
-									</li>
-								</ul>
-							</div>
-							<div className="event-sect-img">
-								<img
-									src="/images/eventImg_3.png"
-									className=" img-fluid"
-									alt=""
-								/>
-								<ul className=" d-flex justify-content-between p-0">
-									<li className="fs-12 px-1">Childrens Day</li>
-									<li className="fs-12">
-										<FontAwesomeIcon
-											icon={faCalendarAlt}
-											width={7}
-											className="me-1"
-										/>
-										27th May 2022
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className=" d-flex justify-content-end">
-							<button className=" btn btn-outline-dark btn-lg fs-18 fw-500 text-capitalize">
-								see all
-							</button>
-						</div>
-					</div>
-				</section>
-
-				<section className="admission-sect">
-					<div className=" container p-5 text-center">
-						<p className="admission-sect-one josefin fw-400 fs-36 text-capitalize">
-							available classes for
-							<span className="josefin fw-700 fs-36 text-capitalize">
-								&nbsp;Admission
-							</span>
-						</p>
-						<div className="admission-sect-two">
-							<div className="admission-sect-two-item">
-								<p>Playgroup/ Creche</p>
-								<p>Kindergaten</p>
-								<p>Kindergaten</p>
-							</div>
-							<div className="admission-sect-two-item">
-								<p>After School Care</p>
-								<p>Basic 1-6</p>
-							</div>
-						</div>
 					</div>
 				</section>
 

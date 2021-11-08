@@ -5,11 +5,8 @@ import Link from "next/link";
 
 const HeaderComp: React.FC = (): JSX.Element => {
   const [menu, setMenu] = useState(false);
-  const [time, setTime] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  setTimeout(() => {
-    setTime(true);
-  }, 2000);
 
   return (
     <Header className="front-header">
@@ -39,7 +36,7 @@ const HeaderComp: React.FC = (): JSX.Element => {
       </nav>
       {menu && (
         <div className="mobile-nav d-md-none">
-          {time && (
+          {open && (
             <div className={`mobile-nav-cover`}>
               <div className="p-2 d-flex justify-content-start">
                 <i
@@ -47,7 +44,7 @@ const HeaderComp: React.FC = (): JSX.Element => {
                   role="button"
                   onClick={() => {
                     setMenu(false);
-                    setTime(false);
+                    setOpen(false);
                   }}
                 ></i>
               </div>
