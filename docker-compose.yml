@@ -5,7 +5,7 @@ services:
     container_name: bdmis_frontend
     image: pin4eva/bdmis_frontend
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV}
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -30,11 +30,22 @@ services:
     build:
       context: ./cms
       dockerfile: Dockerfile
+    env_file: ./cms/.env
     environment:
+      - DATABASE_CLIENT=mongo
+      - DATABASE_NAME=brighter_dawn_cms
+      - DATABASE_HOST=mongo
+      - DATABASE_PORT=27017
+      - DATABASE_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - DATABASE_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - PORT=8001
-      - NODE_ENV=production
-    env_file:
-      - ./cms/.env
+      - NODE_ENV=${NODE_ENV}
+    # volumes:
+    #   - ./cms:/app
+
+    ports:
+      - 8001:8001
+
     depends_on:
       - mongo
 
@@ -46,12 +57,16 @@ services:
       dockerfile: Dockerfile
     environment:
       - DOCKER=true
-    env_file:
-      - ./server/.env
-    restart: unless-stopped
+
+    env_file: ./server/.env
+
+    # restart: unless-stopped
     ports:
       - 8000:8000
     command: yarn start:prod
+    # volumes:
+    #   - .:/app
+
     depends_on:
       - mongo
 
@@ -69,11 +84,12 @@ services:
       - certbot-data:/etc/letsencrypt
     depends_on:
       - cms
-      - frontend
+      # - frontend
 
   mongo:
     container_name: bdmis_mongo
     image: mongo
+    env_file: ./server/.env
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}

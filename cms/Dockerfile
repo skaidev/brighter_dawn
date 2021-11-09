@@ -1,3 +1,9 @@
+# FROM strapi/strapi
+
+# WORKDIR /app
+
+# ENV PORT=8001
+
 FROM node:14-alpine as builder
 
 WORKDIR /app
