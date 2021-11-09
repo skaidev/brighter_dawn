@@ -1,5 +1,5 @@
 const prodOrigins = [
-  "http://195.110.59.91",
+  "http://217.21.78.84",
   "http://server.bdmis.org",
   "https://server.bdmis.org",
   "https://cms.bdmis.org",
