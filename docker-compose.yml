@@ -81,6 +81,7 @@ services:
       - 80:80
       - 443:443
     volumes:
+      - ./nginx/default.conf:/etc/nginx/sites-available/default
       - certbot-data:/etc/letsencrypt
     depends_on:
       - cms
