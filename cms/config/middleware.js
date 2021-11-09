@@ -3,6 +3,7 @@ const prodOrigins = [
   "http://server.bdmis.org",
   "https://server.bdmis.org",
   "https://cms.bdmis.org",
+  "http://cms.bdmis.org",
   "https://bdmis.org",
   "https://www.bdmis.org",
   "https://portal.bdmis.org",
