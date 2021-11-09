@@ -18,6 +18,45 @@
 
       &-right {
         flex: 1;
+
+        &-top {
+          position: sticky;
+          top: 0;
+          padding: 2rem;
+          border: 2px solid rgba(196, 196, 196, 0.69);
+          border-radius: 5px;
+          background-color: $white;
+
+          &-one {
+            background-color: $white;
+
+            .popular-news {
+              border: 1px solid $white;
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.06);
+              border-radius: 5px;
+
+              .left {
+                flex: 1;
+
+                img {
+                  object-fit: cover;
+                  height: 100%;
+                  border-bottom-left-radius: 5px;
+                  border-top-left-radius: 5px;
+                }
+              }
+
+              .right {
+                flex: 1;
+              }
+            }
+
+            .popular-news:hover {
+              border: 2px solid rgba(196, 196, 196, 0.69);
+              transition: 0.5s ease-in-out;
+            }
+          }
+        }
       }
     }
   }
@@ -29,7 +68,7 @@
       flex: 1;
 
       &-section {
-        padding: 2rem;
+        padding: 1rem;
         gap: 1rem;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
         border-radius: 10px;
@@ -66,39 +105,6 @@
       border: 1px solid $celadon-green;
       border-radius: 5px;
       background-color: $celadon-green;
-    }
-  }
-
-  .news-sect {
-    &-item {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-
-      &-desc img {
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-  }
-
-  .admission-sect {
-    background: url("/images/avClass.png") no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-
-    &-two-item {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-
-      & p {
-        padding: 0.5rem;
-        border: 1px solid $lighter-gray;
-        background-color: $lighter-gray;
-      }
     }
   }
 
@@ -174,134 +180,47 @@
     &-content {
       gap: 2rem;
 
-      &-desc {
-        color: $pale-gray;
+      .left {
+        flex: 2;
       }
 
       .right {
-        position: sticky;
-        top: 0;
-
+        flex: 1;
         &-top {
-          // position: sticky;
-          // top: 0;
-          padding: 2rem 2rem 12rem 2rem;
-          border: 2px solid #c4c4c4;
-        }
-  
-        &-base {
-          margin-bottom: 1rem;
-          padding: 0.5rem;
-          border: 2px solid #c4c4c4;
-          border-radius: 5px;
-          gap: 1rem;
-  
-          .p1 {
-            color: $pale-gray;
-          }
-        }
-
-        &-bottom {
-          height: 14.625rem;
+          position: sticky;
+          top: 0;
           padding: 2rem;
-          border: 1px solid $celadon-green;
-          border-radius: 5px;
-          background-color: $celadon-green;
-        }
-
-      }
-
-      .party-overview {
-        &-1 {
-          padding: 8rem;
-          background: url("/images/partyImg.png") no-repeat;
-          background-position: center;
-          background-size: cover;
-        }
-      }
-    }
-
-    
-  }
-
-  .newscard {
-    gap: 2rem;
-
-    &-left {
-      // flex: 1;
-
-      &-section {
-        padding: 2rem;
-        gap: 1rem;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
-        border-radius: 10px;
-
-        &:hover {
           border: 2px solid rgba(196, 196, 196, 0.69);
-          transition: 3s;
-        }
+          border-radius: 5px;
+          background-color: $white;
 
-        .right {
-          &-top {
-            gap: 1rem;
+          .popular-news {
+            border: 1px solid $white;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.06);
+            border-radius: 5px;
 
             .left {
-              color: $nasty-green;
+              flex: 1;
+
+              img {
+                object-fit: cover;
+                flex: 1;
+                height: 100%;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+              }
+            }
+
+            .right {
+              flex: 1;
             }
           }
 
-          &-bottom {
-            gap: 1rem;
-          }
-
-          .link {
-            color: #212529;
-            text-decoration: none;
+          .popular-news:hover {
+            border: 2px solid rgba(196, 196, 196, 0.69);
+            transition: 0.5s ease-in-out;
           }
         }
-      }
-    }
-  }
-
-  .event {
-    background: linear-gradient(
-      105.26deg,
-      rgba(254, 242, 1, 0.096) -3.4%,
-      rgba(109, 183, 68, 0.048) 117.29%
-    );
-
-    &-sect {
-      display: flex;
-
-      &-img {
-        ul {
-          li {
-            list-style: none;
-            color: $white;
-            position: relative;
-            bottom: 2rem;
-            z-index: 99;
-          }
-        }
-      }
-    }
-  }
-
-  .admission-sect {
-    background: url("/images/avClass.png") no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-
-    &-two-item {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-
-      & p {
-        padding: 0.5rem;
-        border: 1px solid $lighter-gray;
-        background-color: $lighter-gray;
       }
     }
   }

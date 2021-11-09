@@ -17,22 +17,17 @@ const SingleNewsComp = ({ article }: IProp) => {
       </div>
       <div className="right">
         <div className=" d-flex right-top">
-          <p className="fs-10 mb-0 left">Childrens Day</p>
-          <p className="fs-10 mb-0 right">Brighter Dawn</p>
-          <div className=" d-flex align-self-end">
+          {/* <div className=" d-flex align-self-end">
             <FontAwesomeIcon icon={faUpload} width={15} className="" />
-          </div>
+          </div> */}
         </div>
         <Link href={`/news/${article?.slug}`}>
           <a className="link">
             <p className="fs-18 fw-500">{article?.title}</p>
           </a>
         </Link>
-
         <p className=" fw-light">{article?.description}</p>
         <div className=" d-flex align-items-center right-bottom">
-          <p className="fs-10">23rd May</p>
-          <p className="fs-10 fw-500">Admin</p>
         </div>
       </div>
     </Wrapper>

@@ -5,26 +5,29 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faArrowRight,
-  faEnvelope,
-  faMapMarkerAlt,
-  faPhoneAlt,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { apolloStrapi } from "apollo";
 import { GET_ARTICLES } from "apollo/queries/article.query";
+import PopularNewsComp from "components/article/PopularNewsComp";
 import SingleNewsComp from "components/article/SingleNewsComp";
 import HeaderComp from "components/HeaderComp";
 import { IArticle } from "interface/article.interface";
 import FrontLayout from "layout/FrontLayout";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { ArticlesAtom } from "store/ArticleAtom";
 import styled from "styled-components";
 
 const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
-  const [articles] = useState<IArticle[]>(initialArticles);
+  const [articles, setArticles] = useRecoilState(ArticlesAtom);
+
+  useEffect(() => {
+    if (initialArticles) setArticles(initialArticles);
+  }, []);
 
   return (
     <FrontLayout>
@@ -63,32 +66,17 @@ const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
               </div>
             </div>
             <div className="hero-section-right">
-              <div>
-                {articles?.map((article, i) => (
-                  <SingleNewsComp key={i} article={article} />
-                ))}
+              <div className="hero-section-right-top">
+                <p className="josefin fs-24 fw-700">Popular News</p>
+                <div className="hero-section-right-top-one">
+                  <PopularNewsComp />
+                </div>
               </div>
             </div>
-            {/* <div className="right">
-							<p className="josefin fs-24 fw-700 text-capitalize">
-								upcoming events
-							</p>
-							<p className=" fw-light">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab id
-								iusto a tempore voluptatem nobis beatae commodi dolorum earum!
-								Quia.
-							</p>
-							<div className="event-list">
-								<EventCal />
-								<EventCal />
-								<EventCal />
-							</div>
-							<p className=" text-end">See all</p>
-						</div> */}
           </div>
         </section>
 
-        <section className="container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0">
+        <section className="container contact d-flex flex-column flex-lg-row justify-content-lg-between p-3">
           <div className="left">
             <p className="josefin fs-36 fw-700 text-capitalize">contact us</p>
             <p className="fs-14">
@@ -96,19 +84,16 @@ const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
               <br /> Ready To Get started
             </p>
             <p className="fs-14">
-              <FontAwesomeIcon icon={faPhoneAlt} width={16} className=" me-3" />
+              <i></i>
+              <i className=" fa fa-phone-alt me-3"></i>
               +2349012624162 &nbsp; &nbsp; +2349012624162
             </p>
             <p className="fs-14">
-              <FontAwesomeIcon icon={faEnvelope} width={16} className=" me-3" />
+            <i className=" fa fa-envelope me-3"></i>
               charlesclifford43@hela.law
             </p>
             <p className="fs-14">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                width={16}
-                className=" me-3"
-              />
+            <i className=" fa fa-map-marker-alt me-3"></i>
               No 6. Mission road Elimgbu, ward 3 Rivers State
             </p>
             <p className="">
@@ -233,28 +218,6 @@ const Wrapper = styled.div`
     min-height: 100vh;
   }
 `;
-
-const EventCal = () => {
-  return (
-    <div className="right-base d-flex align-items-center">
-      <img src="/images/eventCal.svg" style={{ width: "15px" }} alt="" />
-      <p className=" mb-0 fs-12 p1">23rd May</p>
-      <p className=" mb-0 p2">Childrens Day Event</p>
-    </div>
-  );
-};
-
-const news = [
-  {
-    id: 1,
-    img: "/images/newsImg_1.png",
-  },
-
-  {
-    id: 2,
-    img: "/images/newsImg_2.png",
-  },
-];
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
