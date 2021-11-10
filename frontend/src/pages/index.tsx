@@ -48,7 +48,7 @@ const HomePage = () => {
             </div>
           </section>
 
-          <section className="cards container d-lg-flex align-items-center justify-content-center py-5">
+          <section className="cards container d-flex flex-column flex-lg-row align-content-center justify-lg-content-center py-5">
             {cards.map((card, i) => (
               <CardComp card={card} key={i} />
             ))}
@@ -231,7 +231,7 @@ const HomePage = () => {
                       ullamco laboris nisi ut .
                     </p>
                     <Link href="/">
-                      <a href="">
+                      <a className=" text-decoration-none">
                         <p className="fw-500 text-capitalize">
                           read more
                           <span className=" mx-2">
@@ -264,7 +264,7 @@ const HomePage = () => {
                   <ul className=" d-flex justify-content-between p-0">
                     <li className="fs-12 px-1">Childrens Day</li>
                     <li className="fs-12">
-                      <i className=" fa fa-calendar-alt"></i>
+                      <i className=" fa fa-calendar-alt me-2"></i>
                       27th May 2022
                     </li>
                   </ul>
@@ -278,7 +278,7 @@ const HomePage = () => {
                   <ul className=" d-flex justify-content-between p-0">
                     <li className="fs-12 px-1">Childrens Day</li>
                     <li className="fs-12">
-                      <i className=" fa fa-calendar-alt"></i>
+                      <i className=" fa fa-calendar-alt me-2"></i>
                       27th May 2022
                     </li>
                   </ul>
@@ -292,7 +292,7 @@ const HomePage = () => {
                   <ul className=" d-flex justify-content-between p-0">
                     <li className="fs-12 px-1">Childrens Day</li>
                     <li className="fs-12">
-                      <i className=" fa fa-calendar-alt"></i>
+                      <i className=" fa fa-calendar-alt me-2"></i>
                       27th May 2022
                     </li>
                   </ul>

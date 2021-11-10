@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Link from "next/link"
 import { IArticle } from "interface/article.interface";
 import { truncateWord } from 'utils';
-import { useRecoilValue } from 'recoil';
-import { ArticlesAtom } from 'store/ArticleAtom';
-import { useQuery } from '@apollo/client';
+// import { useRecoilValue } from 'recoil';
+// import { ArticlesAtom } from 'store/ArticleAtom';
+// import { useQuery } from '@apollo/client';
 import { GET_ARTICLES } from 'apollo/queries/article.query';
 import { apolloStrapi } from 'apollo';
 
@@ -53,18 +53,4 @@ const PopularNewsComp = () => {
 export default PopularNewsComp;
 
 const Wrapper = styled.div`
-    .popular-news {
-        .left {
-            flex: 1;
-            img {
-                width: 100%;
-            }
-        }
-
-        .right {
-            flex: 1;
-            background-color: green;
-
-        }
-    }
 `

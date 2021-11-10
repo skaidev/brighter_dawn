@@ -27,27 +27,19 @@
   // cards section
 
   .cards {
+    gap: 1rem;
     // margin-top: 8rem;
-    display: flex;
-    flex-wrap: wrap;
 
     .cards-item {
-      // border: 1px solid $light-green;
-      // border-radius: 10px;
-      // background-color: $mint-cream;
-      // width: 100%;
+      border: 1px solid $light-green;
+      border-radius: 10px;
+      background-color: $mint-cream;
+      width: 100%;
 
-      background-color: #f5fff6;
-      height: 11rem;
-      width: 17rem;
-      margin-bottom: 10px;
-      border: solid #c0fdc0 1px;
-      border-radius: 3%;
-      gap: 1rem;
     }
-    @media screen and (max-width: 600px) {
-      flex-direction: column;
-    }
+    // @media screen and (max-width: 600px) {
+    //   flex-direction: column;
+    // }
   }
 
   //   about section
@@ -121,7 +113,7 @@
   .overview {
     background-color: $lighter-gray;
     .overview-wrapper {
-		// background-color: blue;
+      // background-color: blue;
       display: flex;
       margin-top: 5rem;
       padding-top: 7rem;
@@ -131,54 +123,33 @@
         flex-direction: column;
       }
 
-      // &-sect {
-      //   display: flex;
-      //   gap: 2rem;
-      //   padding-top: 3rem;
-      // }
-
       .overview-sect-left {
-		  width: 100%;
-		  position: relative;
-		//   background-color: red;
+        width: 100%;
+        position: relative;
         .building {
-			
-        //   z-index: 1;
-		  @media screen and (max-width:768px){
-			  width: 100%;
-		  }
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
         }
 
         .play {
           position: absolute;
-		  top: 50%;
+          top: 50%;
           left: 50%;
-        //   z-index: 2;
-		  transform: translateY(-50%);
-        //   cursor: pointer;
+          //   z-index: 2;
+          transform: translateY(-50%);
+          //   cursor: pointer;
         }
       }
 
-      //   &-sect-right {
-      //     .numbers {
-      //       display: flex;
-      //       gap: 2rem;
-      //     }
-      //   }
-
-      //   .p1 {
-      //     color: $secondary;
-      //   }
-
       .right {
         .text-content {
-			// background-color: yellow;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
           line-height: 37px;
-		  
+
           .numbers {
             display: flex;
             justify-content: space-between;
@@ -200,9 +171,9 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-	@media screen and (max-width:768px){
-		flex-direction: column;
-	}
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
 
     &-left {
       .card {
@@ -359,7 +330,6 @@
       input {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-		
       }
 
       button {

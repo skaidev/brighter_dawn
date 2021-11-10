@@ -101,22 +101,22 @@ const FooterComp = () => {
             <p>
               <ul className=" d-flex px-0">
                 <li className=" me-3">
-                  <a href="">
+                  <a className=" link-dark">
                     <FontAwesomeIcon icon={faFacebook} width={16} />
                   </a>
                 </li>
                 <li className=" mx-3">
-                  <a href="">
+                  <a className=" link-dark">
                     <FontAwesomeIcon icon={faLinkedin} width={16} />
                   </a>
                 </li>
                 <li className=" mx-3">
-                  <a href="">
+                  <a className=" link-dark">
                     <FontAwesomeIcon icon={faInstagramSquare} width={16} />
                   </a>
                 </li>
                 <li className=" mx-3">
-                  <a href="">
+                  <a className=" link-dark">
                     <FontAwesomeIcon icon={faTwitter} width={16} />
                   </a>
                 </li>
