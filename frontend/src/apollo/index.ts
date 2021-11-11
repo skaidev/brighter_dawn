@@ -20,7 +20,7 @@ let apolloClient: ApolloClient<any>;
 //     global.fetch = fetch;
 // }
 
-const uri = `${SERVER_URL}/graphql`;
+const uri = `${STRAPI_URI}/graphql`;
 
 export const apollo: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 	uri,
