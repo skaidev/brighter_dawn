@@ -32,12 +32,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				></meta>
 				<meta
 					name="keywords"
-					content="human right, activist, campaign, Nigeria"
+					content="Primary school,nursery school, nursery and primary school , Coding club, ICT hall,Portharcourt school, Nigeria"
 				/>
 				<title>Brighter Dawn Montessori International School</title>
 				<meta
 					name="description"
-					content="Evans Dule’s Foundation (EDFoundation), is a non-governmental organization formed in 2015 with the sole aim of addressing the causes of criminality and advancing the cause of human rights, the Foundation has between June 2017 till date defended over 500 Fundamental Right Matters of people whose fundamental right has been."
+					content="Brighter Dawn Montessori International School is an early child education institution nurturing happy effective leaders for the 21st century."
 				/>
 				<link rel="stylesheet" href="/nprogress.css" />
 			</Head>

@@ -9,7 +9,11 @@ const prodOrigins = [
   "https://portal.bdmis.org",
 ];
 const devOrigins = [
-  ...prodOrigins,
+  "http://217.21.78.84",
+  "https://cms.bdmis.org",
+  "http://cms.bdmis.org",
+  "https://bdmis.org",
+  "https://www.bdmis.org",
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:8000",

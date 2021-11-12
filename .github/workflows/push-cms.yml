@@ -1,15 +1,15 @@
-name: Build and Push dashboard to Docker Hub
+name: Build and Push CMS to Docker hub
 
 on:
   push:
     branches:
       - dev
     paths:
-      - "dashboard/**"
+      - "cms/**"
 
 jobs:
   build:
-    name: Build dashboard
+    name: Build Strapi
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,6 +29,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./dashboard
+          context: ./cms
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bdmis_dashboard:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bdmis_cms:latest
