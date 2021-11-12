@@ -39,7 +39,7 @@ services:
       - DATABASE_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - DATABASE_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - PORT=8001
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV}
     # volumes:
     #   - ./cms:/app
 
