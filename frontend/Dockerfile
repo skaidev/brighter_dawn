@@ -11,7 +11,8 @@ FROM node:14-alpine AS builder
 WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
-RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
+# RUN yarn install --production --ignore-scripts --prefer-offline
+RUN yarn build
 
 
 # Production image, copy all the files and run next

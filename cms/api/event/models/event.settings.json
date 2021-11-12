@@ -50,7 +50,9 @@
       "targetField": "title"
     },
     "body": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
+
     }
   }
 }

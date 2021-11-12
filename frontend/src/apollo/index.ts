@@ -11,7 +11,7 @@ import fetch from "isomorphic-unfetch";
 import jscookie from "js-cookie";
 import { NextPageContext } from "next";
 import { useMemo } from "react";
-import { SERVER_URL, STRAPI_URI, TOKEN_NAME, WS_URI } from "../utils/constants";
+import { STRAPI_URI, TOKEN_NAME, WS_URI } from "../utils/constants";
 import { getTokenCookie } from "../utils/cookieUtils";
 
 let apolloClient: ApolloClient<any>;
