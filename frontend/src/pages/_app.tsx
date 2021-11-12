@@ -30,6 +30,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 					name="viewport"
 					content="width=device-width, initial-scale=1, maximum-scale=1.0"
 				></meta>
+				<meta name="yandex-verification" content="a57d2d540a5a65c6" />
 				<meta
 					name="keywords"
 					content="Primary school,nursery school, nursery and primary school , Coding club, ICT hall,Portharcourt school, Nigeria"
