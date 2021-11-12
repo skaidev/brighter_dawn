@@ -48,6 +48,10 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

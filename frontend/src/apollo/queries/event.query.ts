@@ -7,7 +7,7 @@ export const GET_EVENTS = gql`
             title
 			date
 			slug
-			
+			body
             description
             image {
 				url
