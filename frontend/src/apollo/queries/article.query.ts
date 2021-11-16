@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const GET_ARTICLES = gql`
-	{
-		articles {
+	query ($limit:Int,$start:Int){
+		articles (limit:$limit,start:$start,sort:"createdAt:DESC") {
 			id
 			title
 			slug

@@ -247,18 +247,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const news = [
-  {
-    id: 1,
-    img: "/images/newsImg_1.png",
-  },
-
-  {
-    id: 2,
-    img: "/images/newsImg_2.png",
-  },
-];
-
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const { data } = await apolloStrapi.query({
