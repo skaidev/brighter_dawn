@@ -1,9 +1,9 @@
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IArticle } from "interface/article.interface";
+import { truncateWord } from "utils";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import dayjs from "dayjs";
 
 interface IProp {
   article: IArticle;
@@ -26,8 +26,9 @@ const SingleNewsComp = ({ article }: IProp) => {
             <p className="fs-18 fw-500">{article?.title}</p>
           </a>
         </Link>
-        <p className=" fw-light">{article?.description}</p>
+        <p className=" fw-light">{truncateWord(article?.description,30)}</p>
         <div className=" d-flex align-items-center right-bottom">
+          {dayjs(article?.createdAt).format("D MMM YYYY")}
         </div>
       </div>
     </Wrapper>
@@ -40,7 +41,9 @@ const Wrapper = styled.div`
   .left {
     flex: 1;
     img {
-      width: 100%;
+     width: 100%;
+     height: 100%;
+      object-fit: cover;
     }
   }
   .right {
