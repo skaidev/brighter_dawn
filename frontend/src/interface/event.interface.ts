@@ -7,6 +7,7 @@ export interface IEvent {
     body: string;
     image: IMage;
     slug: string;
+    createdAt: Date;
     gallery: IMage[]
 }
 

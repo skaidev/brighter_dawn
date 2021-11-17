@@ -16,6 +16,10 @@ const PopularNewsComp = () => {
 		const getData = async () => {
 			const { data } = await apolloStrapi.query({
 				query: GET_ARTICLES,
+				variables:{
+					start:3,
+					limit: 10
+				}
 			});
 			setArticles(data.articles);
 		};
@@ -29,6 +33,7 @@ const PopularNewsComp = () => {
 					key={i}
 					className="popular-news d-flex align-content-center justify-content-center flex-column flex-lg-row mb-3"
 				>
+					<div className="pop-wrapper">
 					<div className="left">
 						<img src={article?.image?.url} className=" img-fluid" alt="" />
 					</div>
@@ -42,6 +47,8 @@ const PopularNewsComp = () => {
 							{truncateWord(article?.description, 10)}
 						</p>
 					</div>
+					</div>
+					
 				</Wrapper>
 			))}
 		</Fragment>

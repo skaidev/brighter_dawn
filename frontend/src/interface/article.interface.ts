@@ -5,6 +5,7 @@ export interface IArticle {
 	content: string;
 	image: IMage;
 	slug: string;
+	createdAt: Date
 }
 
 export interface IMage {
