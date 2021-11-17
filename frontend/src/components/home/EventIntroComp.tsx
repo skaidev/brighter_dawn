@@ -1,15 +1,37 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
-import Link from "next/link";
 import { IEvent } from "interface/event.interface";
+import { useQuery } from "@apollo/client";
+import { GET_EVENTS } from "apollo/queries/event.query";
 
-interface IProp {
-    event: IEvent;
-  }
 
-const EventIntroComp = ({ event }: IProp) => {
+const EventIntroComp = () => {
+  const [events,setEvents] = useState<IEvent[]>();
+  const {loading} = useQuery(GET_EVENTS, {
+    variables:{limit:3},
+    onCompleted:(data) =>setEvents(data?.events),
+    onError:(err)=>console.log(err)
+  })
+
+  if(loading) return <p>Loading...</p>
   return (
-    <Wrapper>
+    <Fragment>
+      {
+        events?.map((event,i)=>(
+          <SingleEvent key={i} event={event} />
+        ))
+      }
+    </Fragment>
+  )
+};
+
+
+export default EventIntroComp;
+
+const Wrapper = styled.div``;
+
+const SingleEvent = ({event}: {event:IEvent}) => (
+   <Wrapper>
       <div className="event-sect-img me-3">
         <img src={event?.image?.url} className=" img-fluid" alt="" />
         <ul className=" d-flex justify-content-between p-0">
@@ -21,9 +43,4 @@ const EventIntroComp = ({ event }: IProp) => {
         </ul>
       </div>
     </Wrapper>
-  );
-};
-
-export default EventIntroComp;
-
-const Wrapper = styled.div``;
+)

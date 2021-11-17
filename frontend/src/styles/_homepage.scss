@@ -220,13 +220,18 @@
       gap: 1.5rem;
 
       &-desc {
-        .imgitem {
+        .top {
           width: 100%;
           img {
             width: 100%;
+            height: 18rem;
             object-fit: cover;
             object-position: center;
           }
+        }
+
+        .link:hover {
+          color: $primary;
         }
         
         

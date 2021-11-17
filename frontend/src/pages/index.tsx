@@ -12,18 +12,11 @@ import {
   faInstagramSquare,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { IArticle } from "interface/article.interface";
-import { useRecoilState } from "recoil";
-import { ArticlesAtom } from "store/ArticleAtom";
-import { EventsAtom } from "store/EventAtom";
-import { IEvent } from "interface/event.interface";
 import NewsIntroComp from "components/home/NewsIntroComp";
 import EventIntroComp from "components/home/EventIntroComp";
+import { IEvent } from "interface/event.interface";
 
-const HomePage = () => {
-
-
-
+const HomePage = ({ event }:{event:IEvent}) => {
   return (
     <Fragment>
       <Head>
@@ -225,7 +218,7 @@ const HomePage = () => {
               Brighter Dawn <span className="josefin fw-700 fs-36">News</span>
             </p>
             <div className="news-sect-item d-lg-grid">
-			<NewsIntroComp />
+              <NewsIntroComp />
             </div>
           </section>
 
@@ -238,40 +231,14 @@ const HomePage = () => {
                 upcoming events
               </p>
               <div className="event-sect">
-			  {/* <EventIntroComp /> */}
-                {/* <div className="event-sect-img me-3">
-                  <img
-                    src="/images/eventImg_2.png"
-                    className=" img-fluid"
-                    alt=""
-                  />
-                  <ul className=" d-flex justify-content-between p-0">
-                    <li className="fs-12 px-1">Childrens Day</li>
-                    <li className="fs-12">
-                      <i className=" fa fa-calendar-alt me-2"></i>
-                      27th May 2022
-                    </li>
-                  </ul>
-                </div> */}
-                {/* <div className="event-sect-img">
-                  <img
-                    src="/images/eventImg_3.png"
-                    className=" img-fluid"
-                    alt=""
-                  />
-                  <ul className=" d-flex justify-content-between p-0">
-                    <li className="fs-12 px-1">Childrens Day</li>
-                    <li className="fs-12">
-                      <i className=" fa fa-calendar-alt me-2"></i>
-                      27th May 2022
-                    </li>
-                  </ul>
-                </div> */}
+                <EventIntroComp />
               </div>
               <div className=" d-flex justify-content-end">
-                <button className=" btn btn-outline-dark btn-lg fs-18 fw-500 text-capitalize">
+              <Link href="/events">
+              <a><button className=" btn btn-outline-dark btn-lg fs-18 fw-500 text-capitalize">
                   see all
-                </button>
+                </button></a>
+              </Link>
               </div>
             </div>
           </section>
@@ -348,7 +315,7 @@ const HomePage = () => {
           </section>
 
           <section className="container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0">
-            <div className="left">
+            <div className="left px-3">
               <p className="josefin fs-36 fw-700 text-capitalize">contact us</p>
               <p className="fs-14">
                 Want to Know More About Brighter Dawn,
@@ -554,5 +521,3 @@ const activities = [
     title: "karate classes",
   },
 ];
-
-

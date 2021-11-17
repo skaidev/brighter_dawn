@@ -38,9 +38,7 @@ const AllEventsPage = ({ initialEvents }: { initialEvents: IEvent[] }) => {
                 </p>
               </div>
               <div className="hero-content-left-bottom">
-                {events?.map((event, i) => (
-                  <UpcomingEventComp key={i} event={event}/>
-                ))}
+                <UpcomingEventComp />
               </div>
             </div>
           </div>
@@ -103,7 +101,7 @@ const AllEventsPage = ({ initialEvents }: { initialEvents: IEvent[] }) => {
           </div>
         </section> */}
 
-        <section className="container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0">
+        {/* <section className="container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0">
           <div className="left px-4">
             <p className="josefin fs-36 fw-700 text-capitalize">contact us</p>
             <p className="fs-14">
@@ -217,9 +215,9 @@ const AllEventsPage = ({ initialEvents }: { initialEvents: IEvent[] }) => {
               </div>
             </form>
           </div>
-        </section>
+        </section> */}
 
-        <section className=" container mt-5 newsletter d-flex align-items-center flex-column justify-content-center flex-md-row">
+        {/* <section className=" container mt-5 newsletter d-flex align-items-center flex-column justify-content-center flex-md-row">
           <div className="left">
             <p className="fs-48 fw-500 text-capitalize mb-0">newsletter</p>
           </div>
@@ -231,7 +229,7 @@ const AllEventsPage = ({ initialEvents }: { initialEvents: IEvent[] }) => {
             />
             <button className="btn btn-lg px-3">send</button>
           </div>
-        </section>
+        </section> */}
       </Wrapper>
     </FrontLayout>
   );

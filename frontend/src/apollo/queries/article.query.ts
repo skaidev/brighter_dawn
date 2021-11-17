@@ -7,6 +7,7 @@ export const GET_ARTICLES = gql`
 			title
 			slug
 			description
+			createdAt
 			image {
 				url
 			}
