@@ -32,11 +32,11 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   a brighter future <br /> for your kids
                 </h1>
                 <p className="fs-18 mt-4 fw-lighter">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Tenetur hic, voluptatibus minus nobis, aliquam natus ducimus
-                  eligendi consectetur temporibus ad omnis? Distinctio, eum!
-                  Odit delectus nisi dignissimos vitae consequuntur voluptates?
+                  Brighter Dawn Montessori International School is an early child education institution 
+                  nuturing happy and effective leaders for the 21st century.
                 </p>
+                <h4 className="josefin text-capitalize  mt-5">our core values</h4>
+                <p className="fs-18  fw-lighter"> Intergrity, Creativity & Excellence</p>
                 <button className="btn btn-lg btn-primary text-capitalize px-4 mt-5 fw-500 fs-18">
                   enroll now
                 </button>
@@ -66,11 +66,9 @@ const HomePage = ({ event }:{event:IEvent}) => {
                     Brighter Dawn
                   </h2>
                   <p className=" fs-18 fw-lighter  mt-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veniam tenetur excepturi tempora quos nam eaque ab corporis,
-                    ad laborum impedit quod sequi voluptatum rerum! Vel quas
-                    rerum consequuntur. Doloremque eos nostrum minima rerum eius
-                    eveniet quasi officiis, alias quibusdam tenetur.
+                    In Brighter Dawn, we raise happy, self confident, independent, highly motivated 
+                    pupils. 
+
                   </p>
                   <div className=" d-flex align-items-center">
                     <img
@@ -126,20 +124,21 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   <div className="text-content">
                     <h2 className="josefin fw-400 fs-36">Why Choose Us</h2>
                     <p className="fw-light fs-18">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut .
+                    We provide a solid foundation for each child to have
+                    a life-long passion for learning, prepared to be independent, 
+                    maximize readiness for ongoing school experience and 
+                    build strong school/family partnership while exposing staff to
+                    continuous self-improvement. 
                     </p>
                     <div className="numbers">
                       <div className="number-74k">
-                        <p className="fw-400 fs-40 p1 num">74k+</p>
+                        <p className="fw-400 fs-40 p1 num">20+</p>
                         <p className="fw-light fs-18 word">
-                          Qualified Teachers{" "}
+                          Qualified Teachers and Care givers{" "}
                         </p>
                       </div>
                       <div className="number-250">
-                        <p className="fw-400 fs-40 p1 num">250</p>
+                        <p className="fw-400 fs-40 p1 num">8+</p>
                         <p className="fw-light fs-18 word">Extra Curricular</p>
                       </div>
                     </div>
@@ -152,7 +151,7 @@ const HomePage = ({ event }:{event:IEvent}) => {
           <section className=" container activity">
             <div className="activity-left">
               <p className="josefin fs-36 fw-400 text-capitalize">
-                your kids
+                your child's
                 <span className="josefin fw-700 fs-36 text-capitalize">
                   &nbsp;Learning <br />
                   experience
@@ -161,7 +160,8 @@ const HomePage = ({ event }:{event:IEvent}) => {
               <p className="">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
                 ipsam tenetur nostrum beatae quidem ex accusantium autem odit
-                cumque iure.
+                cumque iure. <br />
+                We offer a wide range of extra-curricular activities.....
               </p>
               <div className="card">
                 {activities.map((activity, i) => {
@@ -201,13 +201,25 @@ const HomePage = ({ event }:{event:IEvent}) => {
               </p>
               <div className="admission-sect-two">
                 <div className="admission-sect-two-item">
-                  <p>Playgroup/ Creche</p>
+                  <p> Creche/ Playgroup</p>
                   <p>Kindergaten</p>
-                  <p>Kindergaten</p>
+                  
                 </div>
                 <div className="admission-sect-two-item">
-                  <p>After School Care</p>
                   <p>Basic 1-6</p>
+                  <p>After School Care</p>
+                </div>
+              </div>
+              <h3 className="josefin mt-4">We Also Have</h3>
+              <div className="admission-sect-two">
+                <div className="admission-sect-two-item">
+                  <p> Small class size</p>
+                  <p>Well-equipped ICT & Science Lab</p>
+                  
+                </div>
+                <div className="admission-sect-two-item">
+                  <p>Up-to-Date Curriculum</p>
+                  <p>Serene & Secured environment</p>
                 </div>
               </div>
             </div>
@@ -256,10 +268,10 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   <img src="/images/quote.svg" alt="" />
                 </p>
                 <p className="right p-4 lh-2 fw-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut .Us
+                  Joel and Joey are both doing well for their age. They are very enthusiastic
+                  to learn. Joel has improved so much in his writing, he has mastered writing small letters
+                  so much so that his writing is now too small. Joey is also doing very well.
+                  We are very happy with their progress. Keep doing a great work. 
                 </p>
               </div>
               <div className="profile mt-4 d-flex align-items-center justify-content-around">
@@ -281,7 +293,7 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   />
                   <div className=" d-none d-md-block">
                     <p className=" mb-0 text-uppercase fs-14 fw-500">
-                      Jason Cliff
+                      Mrs Igodo
                     </p>
                     <p className="fs-14">Parent</p>
                   </div>
@@ -323,15 +335,16 @@ const HomePage = ({ event }:{event:IEvent}) => {
               </p>
               <p className="fs-14">
                 <i className=" fa fa-phone-alt me-3"></i>
-                +2349012624162 &nbsp; &nbsp; +2349012624162
+                +2348171248394 &nbsp; &nbsp; +2348186126136
               </p>
               <p className="fs-14">
                 <i className=" fa fa-envelope me-3"></i>
-                charlesclifford43@hela.law
+                info.brighterdawn@gmail.com &nbsp; &nbsp;
+                info.bdmis@gmail.com
               </p>
               <p className="fs-14">
                 <i className=" fa fa-map-marker-alt me-3"></i>
-                No 6. Mission road Elimgbu, ward 3 Rivers State
+                Okuru/Abuloma By-pass, Off Peter Odili Road, Port Harcourt, Rivers State.
               </p>
               <p className="">
                 <ul className=" social-icons p-0 mb-5">
@@ -473,26 +486,26 @@ export const Wrapper = styled.div`
 const cards: IHomeCard[] = [
   {
     image: "/images/cardIcon.svg",
-    title: "awesome teachers",
-    desc: "Vivamus interdum, mauris interdum quis curdum sodales",
+    title: "Awesome Teachers",
+    desc: "We have qualified Teachers that are dedicated to bringing out the best in every pupil.",
   },
 
   {
     image: "/images/cardIcon.svg",
-    title: "global certificate",
-    desc: "Vivamus interdum, mauris interdum quis curdum sodales",
+    title: "Awards",
+    desc: "Port Harcourt Mathematics Quiz Competition (Smart Kids Affiliates)",
   },
 
   {
     image: "/images/cardIcon.svg",
-    title: "best packages",
-    desc: "Vivamus interdum, mauris interdum quis curdum sodales",
+    title: "Modern Facilities",
+    desc: "We have a fully stocked library, a 21st century compliant ICT Lab, a science Lab, a sick bay, a music room, a kitchenette, a play ground and a multi-purpose hall. ",
   },
 
   {
     image: "/images/cardIcon.svg",
-    title: "students support service",
-    desc: "Vivamus interdum, mauris interdum quis curdum sodales",
+    title: "Transport Services",
+    desc: "We offer pick-up and drop-off services within Port harcourt and its environs.",
   },
 ];
 
@@ -510,7 +523,7 @@ const activities = [
   },
 
   {
-    title: "cultural practices",
+    title: "cultural display",
   },
 
   {
@@ -520,4 +533,10 @@ const activities = [
   {
     title: "karate classes",
   },
+  {
+    title: "fine art"
+  },
+  {
+    title: "needle work and crochet"
+  }
 ];
