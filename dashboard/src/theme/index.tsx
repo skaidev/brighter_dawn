@@ -1,17 +1,39 @@
 import { createTheme } from "@mui/material/styles";
 
-export const theme = createTheme({
-	palette: {
-		primary: {
-			main: "#1271bb",
-		},
-		success: {
-			main: "#28a745",
-		},
-		error: {
-			main: "#ff0000",
-		},
+export  interface IColors {
+	primary:{
+		main: string,
+		light:string
 	},
+	success: {
+		main: string,
+		light:string
+	},
+	error: {
+		main: string,
+		light:string
+	},
+}
+
+const palette:IColors =  {
+	primary: {
+		main: "#1271bb",
+		light: "#D6E9F7"
+	},
+	success: {
+		main: "#28a745",
+		light: ""
+	},
+	error: {
+		main: "#ff0000",
+		light: ""
+	},
+}
+export const styledTheme = {
+	palette
+}
+export const theme = createTheme({
+	palette,
 	typography: {
 		fontFamily: ["Lato", "sans-serif"].join(","),
 	},

@@ -8,6 +8,8 @@ import React from "react";
 import DashboardLayout from "./layouts/DashboardLayout";
 import HomePage from "./pages";
 import LoginPage from "./pages/login";
+import TakeAttendComp from "pages/attendance";
+import ViewAttend from "pages/attendance/ViewAttend";
 
 interface IProp {
 	component: React.ElementType;
@@ -66,6 +68,20 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				proctected={false}
 				path="/login"
 				component={LoginPage}
+				layout={DashboardLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/attendance"
+				component={TakeAttendComp}
+				layout={DashboardLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/view"
+				component={ViewAttend}
 				layout={DashboardLayout}
 				isAuth={false}
 			/>
