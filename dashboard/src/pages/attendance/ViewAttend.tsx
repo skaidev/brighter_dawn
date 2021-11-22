@@ -7,9 +7,12 @@ import {
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
 import { CalendarTodayOutlined } from "@mui/icons-material";
 import styled from "styled-components";
+import AttendanceCard from "components/attendance/AttendanceCard";
+import AttendanceRecordComp from "components/attendance/AttendanceRecordComp";
 
 const ViewAttend = () => {
   return (
@@ -18,9 +21,9 @@ const ViewAttend = () => {
         <Box className="view-record-top mt-5">
           <p>Smart Lists:</p>
           <div className="view-record-mid d-flex">
-            <div className=" flex-grow-1">
-              <FormControl fullWidth>
-                <InputLabel className="py-0">Select Class</InputLabel>
+            <div className=" flex-grow-1 p-0">
+              <FormControl className="form" fullWidth>
+                <InputLabel className="">Select Class</InputLabel>
                 <Select label="select class" className="">
                   <MenuItem>ss1</MenuItem>
                   <MenuItem>ss2</MenuItem>
@@ -31,6 +34,7 @@ const ViewAttend = () => {
             <div className=" flex-grow-2">
               <TextField
                 placeholder="Search Names, Reg no"
+                className=""
                 fullWidth
               ></TextField>
             </div>
@@ -42,6 +46,8 @@ const ViewAttend = () => {
             </div>
           </div>
         </Box>
+        <Typography className="mt-5 mb-3 fw-500 fs-24">Student Attendance Record</Typography>
+        <AttendanceRecordComp />
       </Container>
     </Wrapper>
   );
@@ -49,4 +55,12 @@ const ViewAttend = () => {
 
 export default ViewAttend;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .view-record {
+    &-mid {
+      .form {
+        padding: 0!important;
+      }
+    }
+  }
+`;
