@@ -20,7 +20,7 @@ const ViewAttend = () => {
       <Container className="view-record">
         <Box className="view-record-top mt-5">
           <p>Smart Lists:</p>
-          <div className="view-record-mid d-flex">
+          <div className="view-record-mid d-flex flex-lg-row justify-content-lg-center flex-column">
             <div className=" flex-grow-1 p-0">
               <FormControl className="form" fullWidth>
                 <InputLabel className="">Select Class</InputLabel>
