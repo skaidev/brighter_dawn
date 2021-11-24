@@ -18,7 +18,7 @@ const SidebarComp = () => {
 					<Link to="/attendance">
 					<a className="nav-link active">
 						<div className="nav-link_icon">
-							<i className="fas fa-home"></i>
+							<i className="fas fa-calendar"></i>
 						</div>
 						<div className="nav-link_text">Attendance</div>
 					</a>
