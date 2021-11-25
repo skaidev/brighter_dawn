@@ -176,6 +176,7 @@
     }
 
     &-left {
+      width: 100%;
       .card {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
@@ -270,6 +271,9 @@
     &-card {
       border: 1px solid $white;
       background-color: $white;
+      .mumu{
+        background-color: red;
+      }
 
       .left {
         border-right: 4px solid $lighter-gray;
@@ -278,6 +282,14 @@
 
     .svg {
       margin-top: 4.5rem;
+    }
+  }
+  .parents{
+    .mumu{
+      // background-color: red;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
     }
   }
 

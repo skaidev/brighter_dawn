@@ -15,6 +15,7 @@ import {
 import NewsIntroComp from "components/home/NewsIntroComp";
 import EventIntroComp from "components/home/EventIntroComp";
 import { IEvent } from "interface/event.interface";
+import CarouselComp from "./carousel/CarouselComp";
 
 const HomePage = ({ event }:{event:IEvent}) => {
   return (
@@ -35,8 +36,8 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   Brighter Dawn Montessori International School is an early child education institution 
                   nuturing happy and effective leaders for the 21st century.
                 </p>
-                <h4 className="josefin text-capitalize  mt-5">our core values</h4>
-                <p className="fs-18  fw-lighter"> Intergrity, Creativity & Excellence</p>
+                
+                <p className="fs-18  fw-lighter fst-italic"> ......Intergrity, Creativity & Excellence</p>
                 <button className="btn btn-lg btn-primary text-capitalize px-4 mt-5 fw-500 fs-18">
                   enroll now
                 </button>
@@ -66,7 +67,7 @@ const HomePage = ({ event }:{event:IEvent}) => {
                     Brighter Dawn
                   </h2>
                   <p className=" fs-18 fw-lighter  mt-5">
-                    In Brighter Dawn, we raise happy, self confident, independent, highly motivated 
+                    In Brighter Dawn, we raise happy, <br /> self confident, independent, highly motivated 
                     pupils. 
 
                   </p>
@@ -82,7 +83,9 @@ const HomePage = ({ event }:{event:IEvent}) => {
                 <div className="right">
                   <div className="container">
                     <div className="right-img">
-                      <img
+
+                      <img className="img-fluid" src="/images/madam.jpeg" alt="" />
+                      {/* <img
                         src="/images/aboutImg_1.png"
                         className=" kid-girl mt-3 mb-3"
                         alt=""
@@ -91,14 +94,18 @@ const HomePage = ({ event }:{event:IEvent}) => {
                         src="/images/aboutImg_2.png"
                         className=" kid-boy mt-3 mb-3"
                         alt=""
-                      />
+                      /> */}
+                      
+                    </div>
+                    <div className="dam mt-4 fs-18 fw-bold josefin">
+                    <p>Madam Damati <br /> Director, Brighter Dawn Schools</p> 
                     </div>
 
-                    <img
+                    {/* <img
                       src="/images/aboutImg_3.png"
                       className=" mg mt-3 mb-3"
                       alt=""
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -158,9 +165,9 @@ const HomePage = ({ event }:{event:IEvent}) => {
                 </span>
               </p>
               <p className="">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
+                {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
                 ipsam tenetur nostrum beatae quidem ex accusantium autem odit
-                cumque iure. <br />
+                cumque iure. <br /> */}
                 We offer a wide range of extra-curricular activities.....
               </p>
               <div className="card">
@@ -175,7 +182,7 @@ const HomePage = ({ event }:{event:IEvent}) => {
                   );
                 })}
               </div>
-              <p className=" mt-4">And other engaging activities</p>
+              {/* <p className=" mt-4">And other engaging activities</p> */}
             </div>
             <div className="activity-right ">
               <img
@@ -247,7 +254,7 @@ const HomePage = ({ event }:{event:IEvent}) => {
               </div>
               <div className=" d-flex justify-content-end">
               <Link href="/events">
-              <a><button className=" btn btn-outline-dark btn-lg fs-18 fw-500 text-capitalize">
+              <a><button className=" btn btn-outline-dark btn-lg fs-18 fw-500 text-capitalize mt-4">
                   see all
                 </button></a>
               </Link>
@@ -257,65 +264,12 @@ const HomePage = ({ event }:{event:IEvent}) => {
 
           <section className="text-center testimonial pb-5">
             <div className="container">
-              <p className="josefin fw-700 fs-36 text-capitalize">
+            <p className="josefin fw-700 fs-36 text-capitalize">
                 happy parents
               </p>
-              <p className="fs-18 text-capitalize mt-0 mb-5">
-                what they say about us
-              </p>
-              <div className=" d-flex align-items-center testimonial-card p-4">
-                <p className="left p-4">
-                  <img src="/images/quote.svg" alt="" />
-                </p>
-                <p className="right p-4 lh-2 fw-light">
-                  Joel and Joey are both doing well for their age. They are very enthusiastic
-                  to learn. Joel has improved so much in his writing, he has mastered writing small letters
-                  so much so that his writing is now too small. Joey is also doing very well.
-                  We are very happy with their progress. Keep doing a great work. 
-                </p>
-              </div>
-              <div className="profile mt-4 d-flex align-items-center justify-content-around">
-                <img
-                  src="/images/testimonial_1.png"
-                  className=" img-fluid mx-2 "
-                  alt=""
-                />
-                <img
-                  src="/images/testimonial_2.png"
-                  className=" img-fluid mx-2"
-                  alt=""
-                />
-                <div className=" d-flex align-items-center me-4">
-                  <img
-                    src="/images/testimonial_3.png"
-                    className=" img-fluid"
-                    alt=""
-                  />
-                  <div className=" d-none d-md-block">
-                    <p className=" mb-0 text-uppercase fs-14 fw-500">
-                      Mrs Igodo
-                    </p>
-                    <p className="fs-14">Parent</p>
-                  </div>
-                </div>
-                <img
-                  src="/images/testimonial_4.png"
-                  className=" img-fluid mx-2"
-                  alt=""
-                />
-              </div>
-              <div className="svg d-flex justify-content-center">
-                <img src="/images/dot.svg" className=" img-fluid me-3" alt="" />
-                <img src="/images/dot.svg" className=" img-fluid me-3" alt="" />
-                <img
-                  src="/images/dot_1.svg"
-                  className=" img-fluid me-3"
-                  alt=""
-                />
-                <img src="/images/dot.svg" className=" img-fluid me-3" alt="" />
-                <img src="/images/dot.svg" className=" img-fluid me-3" alt="" />
-              </div>
+              < CarouselComp/>
             </div>
+            
           </section>
 
           <section className="award-sect p-3">
@@ -499,7 +453,7 @@ const cards: IHomeCard[] = [
   {
     image: "/images/cardIcon.svg",
     title: "Modern Facilities",
-    desc: "We have a fully stocked library, a 21st century compliant ICT Lab, a science Lab, a sick bay, a music room, a kitchenette, a play ground and a multi-purpose hall. ",
+    desc: "We have a fully stocked library, a 21st century compliant ICT Lab and science Lab etc..",
   },
 
   {
@@ -540,3 +494,5 @@ const activities = [
     title: "needle work and crochet"
   }
 ];
+
+

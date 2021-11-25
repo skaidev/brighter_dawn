@@ -1,3 +1,4 @@
+import { IMage } from "./article.interface";
 
 export interface IEvent {
     id: string;
@@ -11,7 +12,3 @@ export interface IEvent {
     gallery: IMage[]
 }
 
-export interface IMage {
-    url: string;
-    id: string;
-}
