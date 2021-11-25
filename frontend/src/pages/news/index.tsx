@@ -62,7 +62,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
 			query: GET_ARTICLES,
 		});
 		const initialArticles = data?.articles;
-
+		if (!initialArticles) {
+			return {
+				props: {
+					initialArticles: [],
+				},
+			};
+		}
 		return {
 			props: {
 				initialArticles,

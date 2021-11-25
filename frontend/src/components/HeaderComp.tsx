@@ -79,8 +79,8 @@ export default HeaderComp;
 
 const navItems = [
 	{ name: "Home", link: "/" },
-	{ name: "News", link: "news" },
-	{ name: "Events", link: "events" },
+	{ name: "News", link: "/news" },
+	{ name: "Events", link: "/events" },
 ];
 
 const Header = styled.header`

@@ -71,6 +71,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 			props: {
 				event,
 			},
+			revalidate: 60,
 		};
 	} catch (error) {
 		console.log(error);

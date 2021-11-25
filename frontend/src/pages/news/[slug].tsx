@@ -50,12 +50,14 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 				props: {
 					article,
 				},
+				revalidate: 60,
 			};
 		} else {
 			return {
 				props: {
 					article: null,
 				},
+				revalidate: 60,
 			};
 		}
 	} catch (error) {
