@@ -17,10 +17,12 @@ const FooterComp = () => {
           <div className="first">
             <img src="/images/logo.png" className=" mb-4" alt="" />
             <p className=" fw-light fs-14">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed{" "}
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed{" "}
               <br /> do eiusmod tempor incididunt ut labore et dolore magna{" "}
               <br /> aliqua. Ut enim ad minim veniam, quis nostrud exercitation{" "}
-              <br /> ullamco laboris nisi ut .
+              <br /> ullamco laboris nisi ut . */}
+              Brighter Dawn Montessori International School <br/>is an early child education institution 
+                  nuturing happy <br/>and effective leaders for the 21st century.
             </p>
           </div>
           <div className="second">
@@ -63,7 +65,7 @@ const FooterComp = () => {
               </div>
               <div>
                 <p className=" mb-0 fw-700 text-capitalize">call</p>
-                <p className=" mb-0 fw-light fs-14">+234 901 262 4162</p>
+                <p className=" mb-0 fw-light fs-14">+234 817 124 8394</p>
               </div>
             </div>
             <div className=" d-flex align-items-center mb-4">
@@ -84,7 +86,7 @@ const FooterComp = () => {
               <div>
                 <p className=" mb-0 fw-700 text-capitalize">address</p>
                 <p className=" mb-0 fw-light fs-14">
-                  No. 6 Mission Road Elimgbu
+                Okuru/Abuloma By-pass, Off Peter Odili Road, <br /> Port Harcourt, Rivers State.
                 </p>
               </div>
             </div>

@@ -9,7 +9,7 @@ const SidebarComp = () => {
 						<div className="nav-link_icon">
 							<i className="fas fa-home"></i>
 						</div>
-						<div className="nav-link_text">Item 1</div>
+						<div className="nav-link_text">Dashboard</div>
 					</a>
 				</li>
 				<li className="nav-item ">
@@ -17,7 +17,7 @@ const SidebarComp = () => {
 						<div className="nav-link_icon">
 							<i className="fas fa-home"></i>
 						</div>
-						<div className="nav-link_text">Item 1</div>
+						<div className="nav-link_text">Attendance</div>
 					</a>
 				</li>
 			</ul>

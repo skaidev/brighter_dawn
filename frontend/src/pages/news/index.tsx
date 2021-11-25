@@ -6,13 +6,14 @@ import SingleNewsComp from "components/article/SingleNewsComp";
 import { IArticle } from "interface/article.interface";
 import NewsLayout from "layout/NewsLayout";
 import { GetServerSideProps } from "next";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { ArticlesAtom } from "store/ArticleAtom";
 import styled from "styled-components";
 
 const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
 	const [articles, setArticles] = useRecoilState(ArticlesAtom);
+	const [searchTerm, setSearchTerm] = useState("");
 
 	useEffect(() => {
 		if (initialArticles) setArticles(initialArticles);
@@ -35,6 +36,9 @@ const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
 								type="text"
 								placeholder="Search News"
 								className=" form-control border-0"
+								onChange={(event) => {
+									setSearchTerm(event.target.value);
+								}}
 							/>
 						</div>
 					</form>
@@ -42,9 +46,19 @@ const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
 				<div className="left-middle mb-4 mt-4">
 					<p className="text-capitalize josefin fw-400 fs-36">recent news</p>
 					<div>
-						{articles?.map((article, i) => (
-							<SingleNewsComp key={i} article={article} />
-						))}
+						{articles
+							.filter((val) => {
+								if (searchTerm == "") {
+									return val;
+								} else if (
+									val.title.toLowerCase().includes(searchTerm.toLowerCase())
+								) {
+									return val;
+								}
+							})
+							.map((article, i) => (
+								<SingleNewsComp key={i} article={article} />
+							))}
 					</div>
 				</div>
 			</Wrapper>
@@ -60,15 +74,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
 	try {
 		const { data } = await apolloStrapi.query({
 			query: GET_ARTICLES,
+			variables: { limit: 10 },
 		});
 		const initialArticles = data?.articles;
-		if (!initialArticles) {
-			return {
-				props: {
-					initialArticles: [],
-				},
-			};
-		}
+
 		return {
 			props: {
 				initialArticles,

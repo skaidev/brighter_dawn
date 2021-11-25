@@ -30,7 +30,7 @@ const SingleEventsPage = ({ event }: { event: IEvent }) => {
 							</p>
 							<img src={event?.image?.url} className=" img-fluid mb-5" alt="" />
 							<ReactMarkdown>{event?.body}</ReactMarkdown>
-							<div className="hero-content-bottom d-md-grid mb-5">
+							<div className="hero-content-bottom d-md-grid mb-5 mt-5">
 								{event?.gallery?.map((img, i) => (
 									<img src={img?.url} className=" img-fluid" key={i} alt="" />
 								))}

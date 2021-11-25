@@ -6,8 +6,8 @@ const HeaderComp = () => {
 	return (
 		<Header>
 			<div className="top-header bg-dark text-light">
-				<nav className="navbar container-fluid">
-					<p className="mb-0 fs-24">BDMIS</p>
+				<nav className="navbar container">
+					<p className="mb-0 fs-24">School Management System</p>
 					<ul className="nav">
 						<li className="nav-item dropdown">
 							<button
@@ -25,9 +25,10 @@ const HeaderComp = () => {
 				</nav>
 			</div>
 			<div className="bottom-header bg-light-primary py-2">
-				<nav className="container-fluid">
+				<nav className="container">
 					<ul className="nav">
-						<li className="nav-item">Student</li>
+						<li className="nav-item me-4">Take Attendance</li>
+						<li className="nav-item">View Attendance</li>
 					</ul>
 				</nav>
 			</div>

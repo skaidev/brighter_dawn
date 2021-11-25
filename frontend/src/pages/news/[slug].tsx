@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import NewsLayout from "layout/NewsLayout";
 import Head from "next/head";
+import dayjs from "dayjs";
 
 const NewsPageItem = ({ article }: { article: IArticle }) => {
 	return (
@@ -16,13 +17,13 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 				<meta name="description" content={article?.description} />
 			</Head>
 			<NewsLayout>
-				<Wrapper className="">
-					<article>
+				<Wrapper className="newspage">
+					<article className="hero">
 						<p className="josefin hero-content-title fs-36 fw-600">
 							{article?.title}
 						</p>
 						<p className="fs-14 fw-400 hero-content-desc mb-5">
-							Updated 10:29 AM, Wed October 20, 2021
+							{dayjs(article?.createdAt).format("D MMM YYYY")}
 						</p>
 						<img src={article?.image?.url} className=" img-fluid mb-4" alt="" />
 						<ReactMarkdown>{article?.content}</ReactMarkdown>
@@ -35,7 +36,13 @@ const NewsPageItem = ({ article }: { article: IArticle }) => {
 
 export default NewsPageItem;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	.hero {
+		img {
+			width: 100%;
+		}
+	}
+`;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	const slug = ctx?.params?.slug;

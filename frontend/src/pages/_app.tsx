@@ -9,6 +9,8 @@ import { RecoilRoot } from "recoil";
 import "styles/index.scss";
 import "styles/custom.scss";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"; 
 
 if (process.browser) {
 	require("bootstrap/dist/js/bootstrap");
