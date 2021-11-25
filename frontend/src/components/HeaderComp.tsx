@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+
 const HeaderComp: React.FC = (): JSX.Element => {
   const [menu, setMenu] = useState(false);
   const [time, setTime] = useState(false);
@@ -84,6 +85,7 @@ const navItems = [
   { name: "Home", link: "/" },
   { name: "News", link: "news" },
   { name: "Events", link: "events" },
+  { name: "Facilities", link: "facilities" },
 ];
 
 const Header = styled.header`

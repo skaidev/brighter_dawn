@@ -28,11 +28,24 @@ const EventIntroComp = () => {
 
 export default EventIntroComp;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+.event-sect-img{
+  height: 100%;
+    /* width: 100vw; */
+    background: black;
+    overflow: hidden;
+    
+}
+img{
+  height: 100%;
+  opacity: 0.6;
+}
+
+`;
 
 const SingleEvent = ({event}: {event:IEvent}) => (
    <Wrapper>
-      <div className="event-sect-img me-3">
+      <div  className="event-sect-img me-3">
         <img src={event?.image?.url} className=" img-fluid" alt="" />
         <ul className=" d-flex justify-content-between p-0">
           <li className="fs-12 px-1">{event?.title}</li>
