@@ -1,13 +1,8 @@
 import {
   Box,
-  Button,
   Container,
-  FormControl,
   Grid,
-  InputLabel,
-  MenuItem,
   Paper,
-  Select,
   Table,
   TableBody,
   TableCell,
@@ -19,6 +14,9 @@ import { DoneAll } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 import SingleMessageComp from "components/messages/SingleMessageComp";
+import MenuMessageComp from "components/messages/MenuMessageComp";
+import { ButtonComp } from "lib/ButtonComp";
+import { InputComp } from "lib/InputComp";
 
 const MessagesPage = () => {
   return (
@@ -27,17 +25,10 @@ const MessagesPage = () => {
         <div className="message-left">
           <Box className="message-left-content">
             <div className="message-left-content-top p-3">
-              <TextField placeholder="Search" fullWidth></TextField>
+              <InputComp placeholder="Search" fullWidth />
             </div>
-            <div className="message-left-content-bottom d-flex mt-1 px-3">
-              <FormControl variant="standard" className="first pb-2">
-                <InputLabel className="first-top">All Messages</InputLabel>
-                <Select label="All Messages">
-                  <MenuItem>All Messages</MenuItem>
-                  <MenuItem>Sent Messages</MenuItem>
-                  <MenuItem>Draft Messages</MenuItem>
-                </Select>
-              </FormControl>
+            <div className="message-left-content-bottom d-flex mt-1 px-3 p-2">
+              <MenuMessageComp />
             </div>
           </Box>
           <TableContainer component={Paper} className="message-left-table">
@@ -51,7 +42,9 @@ const MessagesPage = () => {
                         {card.name} <br /> {card.desc}
                       </p>
                     </TableCell>
-                    <TableCell>{card.time} <br /> <DoneAll /></TableCell>
+                    <TableCell>
+                      {card.time} <br /> <DoneAll />
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -60,9 +53,7 @@ const MessagesPage = () => {
         </div>
         <div className="message-right">
           <Grid container justifyContent="flex-end">
-            <Button variant="contained" className=" text-capitalize">
-              new message
-            </Button>
+            <ButtonComp variant="contained" className=" text-capitalize">new message</ButtonComp>
           </Grid>
           <SingleMessageComp />
         </div>

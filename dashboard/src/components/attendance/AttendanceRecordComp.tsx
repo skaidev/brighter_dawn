@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  Box,
   Checkbox,
-  Container,
   Table,
   TableBody,
   TableCell,
@@ -10,11 +8,11 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Button,
   Grid,
 } from "@mui/material";
 import { Print } from "@mui/icons-material";
 import styled from "styled-components";
+import { ButtonCompTwo } from "lib/ButtonComp";
 
 const AttendanceRecordComp = () => {
   return (
@@ -85,15 +83,15 @@ const AttendanceRecordComp = () => {
         </TableContainer>
       </div>
       <Grid container justifyContent="flex-end" className=" mt-4 mb-5">
-        <Button
+        <ButtonCompTwo
           variant="outlined"
           color="info"
           startIcon={<Print />}
-          className="btn_1 me-4"
+          className="me-4"
         >
           print
-        </Button>
-        <Button variant="contained" className="btn_2">next</Button>
+        </ButtonCompTwo>
+        <ButtonCompTwo variant="contained">next</ButtonCompTwo>
       </Grid>
     </Wrapper>
   );
@@ -106,8 +104,6 @@ const Wrapper = styled.div`
     &-top {
       &-one {
         &-first {
-          align-items: center;
-          justify-content: space-evenly;
           border: 1px solid #1271bb;
           background-color: #1271bb;
 
@@ -124,16 +120,6 @@ const Wrapper = styled.div`
         justify-content: space-evenly;
       }
     }
-  }
-
-  .btn_1 {
-    border-color: #E5E5E5;
-    border-radius: 8px;
-    color: #777777;
-  }
-
-  .btn_2 {
-    border-radius: 8px;
   }
 `;
 

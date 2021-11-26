@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import { FormatBold, FormatItalicOutlined, FormatUnderlined } from "@mui/icons-material";
+import { FormatBold, FormatItalicOutlined, FormatUnderlined, AttachmentRounded } from "@mui/icons-material";
+import { TextAreaComp } from "lib/TextAreaComp";
 
 const SingleMessageComp = () => {
   return (
@@ -37,16 +38,17 @@ const SingleMessageComp = () => {
               </div>
               <div className="bottom-second d-flex">
                   <div>
-                  <TextareaAutosize
+                  <TextAreaComp
                 minRows={1}
                 placeholder="Enter your message here....."
-                style={{ width: "600px" }}
+                // style={{ width: "600px" }}
                 className="mt-4 p-4 pt-2 left"
-              ></TextareaAutosize>
+              ></TextAreaComp>
               <div className="icons">
               <FormatBold />
               <FormatItalicOutlined />
               <FormatUnderlined />
+              <AttachmentRounded />
               </div>
                   </div>
               <img src="/images/arrow.svg" alt="" className="right" />
