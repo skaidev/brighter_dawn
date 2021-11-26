@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - "server/cms/**"
+      - "cms/**"
 
 jobs:
   deploy:
