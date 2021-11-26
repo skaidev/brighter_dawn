@@ -7,7 +7,7 @@ const HeaderComp: React.FC = (): JSX.Element => {
 	const [menu, setMenu] = useState(false);
 	const [time, setTime] = useState(false);
 	const router = useRouter();
-	const pathname = router.pathname;
+	const { pathname } = router;
 
 	setTimeout(() => {
 		setTime(true);
@@ -24,10 +24,10 @@ const HeaderComp: React.FC = (): JSX.Element => {
 				<ul className="nav d-none d-md-flex">
 					{navItems.map((nav, i) => (
 						<li className="nav-item" key={i}>
-							<Link href={nav.link}>
+							<Link href={nav.name === "Home" ? "/" : (nav?.link as string)}>
 								<a
 									className={`nav-link link-dark bg-grey fs-18 fw-400 ${
-										pathname?.split("/")?.[1] === nav.link ? "active" : ""
+										pathname?.includes(nav.link as string) ? "active" : ""
 									}`}
 								>
 									{nav.name}
@@ -63,7 +63,9 @@ const HeaderComp: React.FC = (): JSX.Element => {
 							<ul className=" mt-5">
 								{navItems.map((nav, i) => (
 									<li className="nav-item" key={i}>
-										<Link href={`/${nav.link}`}>
+										<Link
+											href={nav.name === "Home" ? "/" : (nav?.link as string)}
+										>
 											<a className="nav-link link-dark">{nav.name}</a>
 										</Link>
 									</li>
@@ -82,11 +84,15 @@ const HeaderComp: React.FC = (): JSX.Element => {
 
 export default HeaderComp;
 
-const navItems = [
-	{ name: "Home", link: "/" },
-	{ name: "News", link: "news" },
-	{ name: "Events", link: "events" },
-	{ name: "Facilities", link: "facilities" },
+interface INav {
+	name: string;
+	link?: string | null;
+}
+const navItems: INav[] = [
+	{ name: "Home", link: null },
+	{ name: "News", link: "/news" },
+	{ name: "Events", link: "/events" },
+	{ name: "Facilities", link: "/facilities" },
 ];
 
 const Header = styled.header`

@@ -62,6 +62,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
 	try {
 		const { data } = await apolloStrapi.query({
 			query: GET_EVENTS,
+			variables: {
+				limit: 20,
+			},
 		});
 		const initialEvents = data?.events;
 
