@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - "server/strapi/**"
+      - "server/cms/**"
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - uses: actions/checkout@v2
-      - name: Deploy Strapi
+      - name: Deploy CMS
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}}
@@ -27,5 +27,5 @@ jobs:
 
           script: |
             cd app
-            docker-compose pull strapi
-            docker-compose up -d strapi
+            docker-compose pull cms
+            docker-compose up -d cms
