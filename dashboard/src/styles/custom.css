@@ -1,0 +1,126 @@
+.c-pointer {
+  cursor: pointer;
+}
+
+.fs-14 {
+  font-size: 0.875rem;
+}
+
+.fs-24 {
+  font-size: 1.5rem;
+}
+
+.fs-18 {
+  font-size: 1.125rem;
+}
+
+.bg-light-primary {
+  background-color: #d6e9f7;
+}
+
+.main-aside {
+  position: relative;
+  width: 4rem;
+}
+
+.main-aside .nav-link {
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+  width: 3rem;
+  -webkit-transition: 0.5s width ease-in-out, 0.2s background ease-in-out;
+  transition: 0.5s width ease-in-out, 0.2s background ease-in-out;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  padding: 0;
+}
+
+.main-aside .nav-link_text {
+  position: absolute;
+  left: -100vw;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+.main-aside .nav-link_icon {
+  padding: 0.5rem;
+  z-index: 1;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  background: white;
+}
+
+.main-aside .nav-item:hover .nav-link {
+  width: 10rem;
+  background-color: #1271bb;
+  color: whitesmoke;
+}
+
+.main-aside .nav-item:hover .nav-link_icon {
+  background-color: #1271bb;
+}
+
+.main-aside .nav-item:hover .nav-link_text {
+  left: 2rem;
+  width: 5rem;
+}
+
+.main-aside .nav-item .active {
+  background-color: #1271bb;
+  color: whitesmoke;
+}
+
+.main-aside .nav-item .active .nav-link_icon {
+  background-color: #1271bb;
+  color: whitesmoke;
+}
+
+.front .attendance {
+  gap: 1rem;
+}
+
+.front .attendance-left-top {
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.front .attendance-left-top p {
+  color: #777777;
+  text-decoration: underline;
+}
+
+.front .attendance-right .right-top {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  border: 1px solid #1271bb;
+  background-color: #1271bb;
+  color: #fff;
+}
+
+.view-record-top {
+  padding: 0 1rem 1rem 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.view-record-top p {
+  text-decoration: underline;
+  color: #777777;
+}
+
+.view-record-mid {
+  gap: 1rem;
+}
+/*# sourceMappingURL=custom.css.map */

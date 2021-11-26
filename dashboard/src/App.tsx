@@ -3,14 +3,17 @@ import RouterComp from "./routes";
 import "./styles/index.scss";
 import "./styles/custom.scss";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "theme";
+import { styledTheme, theme } from "theme";
 import "bootstrap/dist/js/bootstrap.js";
+import {ThemeProvider as StyledThemeProvider} from "styled-components"
 
 const App = () => {
 	return (
-		<ThemeProvider theme={theme}>
+		<StyledThemeProvider theme={styledTheme}>
+			<ThemeProvider theme={theme}>
 			<RouterComp isAuth={true} />
 		</ThemeProvider>
+		</StyledThemeProvider>
 	);
 };
 
