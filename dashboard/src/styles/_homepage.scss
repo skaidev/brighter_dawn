@@ -1,12 +1,45 @@
-.attendance {
-    &-card {
+.front {
+  .attendance {
+    gap: 1rem;
+    &-left {
+      &-top {
         padding: 1rem;
         border: 1px solid $pale-gray;
         border-radius: 8px;
 
         p {
-            color: $light-gray;
-            text-decoration: underline;
+          color: $light-gray;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-right {
+      .right-top {
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2.5rem;
+        border: 1px solid $primary;
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.view {
+    &-record {
+        &-top {
+            padding: 0 1rem 1rem 1rem;
+            border: 1px solid $pale-gray;
+            border-radius: 8px;
+            p {
+                text-decoration: underline;
+                color: $light-gray;
+            }
+        }
+        &-mid {
+            gap: 1rem;
         }
     }
 }

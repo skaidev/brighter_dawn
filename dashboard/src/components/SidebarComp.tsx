@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 const SidebarComp = () => {
 	return (
 		<Aside className="main-aside ">
@@ -13,12 +15,24 @@ const SidebarComp = () => {
 					</a>
 				</li>
 				<li className="nav-item ">
-					<a className="nav-link active" href="/">
+					<Link to="/attendance">
+					<a className="nav-link active">
 						<div className="nav-link_icon">
-							<i className="fas fa-home"></i>
+							<i className="fas fa-calendar"></i>
 						</div>
 						<div className="nav-link_text">Attendance</div>
 					</a>
+					</Link>
+				</li>
+				<li className="nav-item ">
+					<Link to="/messages">
+					<a className="nav-link active">
+						<div className="nav-link_icon">
+							<i className="fas fa-comment"></i>
+						</div>
+						<div className="nav-link_text">Messages</div>
+					</a>
+					</Link>
 				</li>
 			</ul>
 		</Aside>
