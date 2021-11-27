@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { IEvent } from "interface/event.interface";
 import { useQuery } from "@apollo/client";
 import { GET_EVENTS } from "apollo/queries/event.query";
+import Link from "next/link";
 
 
 const EventIntroComp = () => {
@@ -45,6 +46,8 @@ img{
 
 const SingleEvent = ({event}: {event:IEvent}) => (
    <Wrapper>
+      <Link href={`/events/${event?.slug}`}>
+      <a className="text-decoration-none">
       <div  className="event-sect-img me-3">
         <img src={event?.image?.url} className=" img-fluid" alt="" />
         <ul className=" d-flex justify-content-between p-0">
@@ -55,5 +58,7 @@ const SingleEvent = ({event}: {event:IEvent}) => (
           </li>
         </ul>
       </div>
+      </a>
+      </Link>
     </Wrapper>
 )
