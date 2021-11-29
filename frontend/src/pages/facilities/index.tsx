@@ -24,7 +24,7 @@ const FacilitiesPage = () => {
               science laboratory center
             </h5>
             <div className='girl-text d-flex'>
-              <img src='/images/Group_9899.png' alt='' />
+              <img className='img-fluid' src='/images/Group_9899.png' alt='' />
               <div className='text-content'>
                 <p className='fw-light fs-18'>
                   “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -59,34 +59,105 @@ const FacilitiesPage = () => {
             </h5>
             <div className='sports-wrapper d-flex '>
               <div className='boy-text '>
-                <img src='/images/Frame_9973.png' alt='' />
+                <img className='img-fluid' src='/images/Frame_9973.png' alt='' />
                 <p>
                   “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut .Lorem tempor incididunt ut labore et
                   exercitation ullamco laboris nisi ut. Loremipsum t”
-                </p> 
+                </p>
               </div>
               <div className='b-wrapper d-flex'>
                 <div className='swim'>
-                  <img className='mb-3' src='/images/kids_swimming_1.png' alt='' />
-                  <img src='/images/girl_holding_ball_1.png' alt='' />
+                  <img
+                    className='mb-3 '
+                    src='/images/kids_swimming_1.png'
+                    alt=''
+                  />
+                  <img
+                    className=''
+                    src='/images/girl_holding_ball_1.png'
+                    alt=''
+                  />
                 </div>
                 <div className='basketball'>
-                  <img className='mb-3' src='/images/football_1.png' alt='' />
-                  <img src='/images/basket_court_1.png' alt='' />
+                  <img className='mb-3 ' src='/images/football_1.png' alt='' />
+                  <img className='' src='/images/basket_court_1.png' alt='' />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        
-        
-        
-        
-        
+        <section className='container'>
+          <div className='computer  mt-5'>
+            <h5 className='josefin fs-36 fw-400 text-capitalize'>
+              information communication technology
+            </h5>
+            <div className='girl-text d-flex'>
+              <img className='img-fluid' src='/images/Frame 9951.png' alt='' />
+              <div className='text-content'>
+                <p className='fw-light fs-18'>
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut .Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  .Lorem ipsum t”
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='computer-image '>
+            <img
+              src='/images/4535496-interior-of-classroom-with-computers 1.png'
+              alt=''
+            />
+            <img src='/images/fixing_computer_1.png' alt='' />
+            <img src='/images/classroom-projector-screen 1.png' alt='' />
+            <img
+              src='/images/360_F_269246962_HqzYSUKPdFWYFnvTBhrkhFBADwrIl2ds 1.png'
+              alt=''
+            />
+          </div>
+        </section>
+
+        <section className='container'>
+          <div className='food'>
+            <h5 className='josefin fs-36 fw-400 text-capitalize'>
+              sport and physical center
+            </h5>
+
+            <div className='food-wrapper d-flex '>
+              <div className='boy-text '>
+                <img className='img-fluid' src='/images/Frame_9962.png' alt='' />
+                <p>
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut .Lorem tempor incididunt ut labore et
+                  exercitation ullamco laboris nisi ut. Loremipsum t”
+                </p>
+              </div>
+              <div className='b-wrapper'>
+                <div className="top">
+                    <img className='' src="/images/cooook 1 (1).png" alt="" />
+                    <img className='' src="/images/kitche_1.png" alt="" />
+                </div>
+                <div className="bottom mt-3">
+                    <img className='' src="/images/kitchen_1.png" alt="" />
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className='container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0'>
           <div className='left px-3'>
             <p className='josefin fs-36 fw-700 text-capitalize'>contact us</p>

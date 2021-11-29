@@ -57,7 +57,7 @@ const HomePage = () => {
             ))}
           </section>
 
-          <section className=' container'>
+          <section id='about' className=' container'>
             <div className='about-section'>
               <div className='about-wrapper mt-5 '>
                 <div className='left'>
