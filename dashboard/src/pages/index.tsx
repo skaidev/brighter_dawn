@@ -1,12 +1,15 @@
+// import { ModalComp } from "lib/ModalComp";
+import BasicModal from "components/messages/ModalComp";
 import { ButtonComp } from "lib/ButtonComp";
-import React from "react";
+import React, { useState } from "react";
 
 const HomePage = () => {
+  const [open,setOpen] = useState(false)
   return (
     <div>
-      <ButtonComp variant="contained">Primary</ButtonComp>
+      <ButtonComp onClick={()=>setOpen(true)}>Open</ButtonComp>
+      <BasicModal open={open} onClose={()=>setOpen(false)} />
     </div>
-  
   );
 };
 

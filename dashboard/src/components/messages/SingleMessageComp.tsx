@@ -5,10 +5,16 @@ import {
   TableRow,
   TableCell,
   TextareaAutosize,
+  Grid,
 } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import { FormatBold, FormatItalicOutlined, FormatUnderlined, AttachmentRounded } from "@mui/icons-material";
+import {
+  FormatBold,
+  FormatItalicOutlined,
+  FormatUnderlined,
+  AttachmentRounded,
+} from "@mui/icons-material";
 import { TextAreaComp } from "lib/TextAreaComp";
 
 const SingleMessageComp = () => {
@@ -37,21 +43,20 @@ const SingleMessageComp = () => {
                 <p>Obe Sampson</p>
               </div>
               <div className="bottom-second d-flex">
-                  <div>
+                <div>
                   <TextAreaComp
-                minRows={1}
-                placeholder="Enter your message here....."
-                // style={{ width: "600px" }}
-                className="mt-4 p-4 pt-2 left"
-              ></TextAreaComp>
-              <div className="icons">
-              <FormatBold />
-              <FormatItalicOutlined />
-              <FormatUnderlined />
-              <AttachmentRounded />
-              </div>
+                    minRows={1}
+                    placeholder="Enter your message here....."
+                    className="mt-4 p-4 pt-2 left"
+                  ></TextAreaComp>
+                  <div className="icons">
+                    <FormatBold />
+                    <FormatItalicOutlined />
+                    <FormatUnderlined />
+                    <AttachmentRounded />
                   </div>
-              <img src="/images/arrow.svg" alt="" className="right" />
+                </div>
+                <img src="/images/arrow.svg" alt="" className="right" />
               </div>
             </TableCell>
           </TableRow>
@@ -91,16 +96,16 @@ const Wrapper = styled.div`
           }
         }
         &-second {
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
           .left {
             border-radius: 10px;
           }
 
           .icons {
-              position: relative;
-              bottom: 2.2rem;
+            position: relative;
+            bottom: 2.2rem;
           }
         }
       }
