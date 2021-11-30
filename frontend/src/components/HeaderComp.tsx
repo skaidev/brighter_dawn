@@ -41,9 +41,9 @@ const HeaderComp: React.FC = (): JSX.Element => {
 						<img src="/images/logo.png" alt="" />
 					</a>
 				</Link>
-				<button className="btn btn-lg btn-outline-dark px-5 fs-6 fw-500 pr-5 ">
-					Enroll
-				</button>
+				<Link href='/registration'>
+					<a className="btn btn-lg btn-outline-dark px-5 fs-6 fw-500 pr-5 ">Enroll</a>
+				</Link>
 			</nav>
 			{menu && (
 				<div className="mobile-nav d-md-none">
