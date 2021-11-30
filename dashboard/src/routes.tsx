@@ -13,6 +13,7 @@ import ViewAttend from "pages/attendance/ViewAttend";
 import AttendanceLayout from "layouts/AttendanceLayout";
 import MessagesPage from "pages/messages";
 import MessageLayout from "layouts/MessageLayout";
+import SingleMessagePage from "pages/messages/[id]";
 
 interface IProp {
 	component: React.ElementType;
@@ -92,6 +93,13 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				proctected={false}
 				path="/messages"
 				component={MessagesPage}
+				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/singlemessage"
+				component={SingleMessagePage}
 				layout={MessageLayout}
 				isAuth={false}
 			/>

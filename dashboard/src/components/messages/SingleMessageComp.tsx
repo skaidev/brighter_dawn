@@ -4,8 +4,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  TextareaAutosize,
-  Grid,
+  Typography,
 } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
@@ -16,12 +15,18 @@ import {
   AttachmentRounded,
 } from "@mui/icons-material";
 import { TextAreaComp } from "lib/TextAreaComp";
+import LongMenu from "./OtherMenuComp";
+import ReplyMenuComp from "./ReplyMenuComp";
 
 const SingleMessageComp = () => {
   return (
     <Wrapper className="message mt-3">
       <TableContainer className="message-content" component={Paper}>
         <TableBody>
+          <div className="head d-flex">
+            <Typography className=" mx-3">Obe Sampson</Typography>
+            <LongMenu />
+          </div>
           {messageCard.map((card, i) => (
             <TableRow className="top" key={i}>
               <TableCell className="top-first d-flex">
@@ -33,6 +38,7 @@ const SingleMessageComp = () => {
                   <p>{card.desc}</p>
                   <div className="one-top">{card.desc2}</div>
                 </div>
+                <ReplyMenuComp />
               </TableCell>
             </TableRow>
           ))}
@@ -49,11 +55,15 @@ const SingleMessageComp = () => {
                     placeholder="Enter your message here....."
                     className="mt-4 p-4 pt-2 left"
                   ></TextAreaComp>
-                  <div className="icons">
-                    <FormatBold />
-                    <FormatItalicOutlined />
-                    <FormatUnderlined />
-                    <AttachmentRounded />
+                  <div className="icons px-3">
+                    <div>
+                      <FormatBold />
+                      <FormatItalicOutlined />
+                      <FormatUnderlined />
+                    </div>
+                    <div>
+                      <AttachmentRounded />
+                    </div>
                   </div>
                 </div>
                 <img src="/images/arrow.svg" alt="" className="right" />
@@ -71,6 +81,9 @@ export default SingleMessageComp;
 const Wrapper = styled.div`
   .message {
     &-content {
+      .head {
+        justify-content: space-between;
+      }
       .top {
         &-first {
           img {
@@ -104,6 +117,8 @@ const Wrapper = styled.div`
           }
 
           .icons {
+            display: flex;
+            justify-content: space-between;
             position: relative;
             bottom: 2.2rem;
           }

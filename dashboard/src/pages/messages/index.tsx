@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { DoneAll } from "@mui/icons-material";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SingleMessageComp from "components/messages/SingleMessageComp";
 import MenuMessageComp from "components/messages/MenuMessageComp";
@@ -52,9 +53,14 @@ const MessagesPage = () => {
           </TableContainer>
         </div>
         <div className="message-right">
-          <Grid container justifyContent="flex-end">
-            <ButtonComp variant="contained" className=" text-capitalize">new message</ButtonComp>
-          </Grid>
+          <Link to="/singlemessage">
+            <Grid container justifyContent="flex-end">
+              <ButtonComp variant="contained" className=" text-capitalize">
+                new message
+              </ButtonComp>
+            </Grid>
+          </Link>
+
           <SingleMessageComp />
         </div>
       </Container>
@@ -66,6 +72,7 @@ export default MessagesPage;
 
 const Wrapper = styled.div`
   .message {
+    gap: 1rem;
     &-left {
       width: 40%;
       &-content {
