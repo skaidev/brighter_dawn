@@ -24,7 +24,7 @@ const HeaderComp = () => {
           </ul>
         </nav>
       </div>
-      <div className="bottom-header bg-light-primary pt-2 pb-0">
+      {/* <div className="bottom-header bg-light-primary pt-2 pb-0">
         <nav className="container">
           <ul className="nav">
             <Link to="/attendance" className="link">
@@ -35,7 +35,7 @@ const HeaderComp = () => {
             </Link>
           </ul>
         </nav>
-      </div>
+      </div> */}
     </Header>
   );
 };
