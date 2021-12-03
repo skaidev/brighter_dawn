@@ -3,6 +3,7 @@ import {
   FormatBold,
   FormatItalicOutlined,
   FormatUnderlined,
+  ArrowBack,
 } from "@mui/icons-material";
 import {
   Container,
@@ -12,22 +13,34 @@ import {
   MenuItem,
   TextareaAutosize,
   Typography,
+  SelectChangeEvent,
 } from "@mui/material";
 import { ButtonComp } from "lib/ButtonComp";
 import { InputComp, SelectComp } from "lib/InputComp";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const SingleMessagePage = () => {
+  const [form, setForm] = React.useState(" ");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setForm(event.target.value as string);
+  };
+
   return (
     <Wrapper>
       <Container className="header mb-5">
-        <Typography className="text mt-3">Smart Lists:</Typography>
+        <div className="header-top d-flex">
+          <Typography className="text mt-3">Smart Lists:</Typography>
+          <ButtonComp variant="outlined" startIcon={<ArrowBack />}>
+            Back
+          </ButtonComp>
+        </div>
         <div className="header-content d-flex mt-3">
           <div className="left">
             <FormControl fullWidth>
               <InputLabel>Select Class</InputLabel>
-              <SelectComp placeholder="select class">
+              <SelectComp placeholder="select class" value={form}>
                 <MenuItem>ss1</MenuItem>
                 <MenuItem>ss2</MenuItem>
                 <MenuItem>ss3</MenuItem>
@@ -53,13 +66,13 @@ const SingleMessagePage = () => {
         </div>
         <div className="header-desc d-flex mt-5">
           <div className="first">
-            <p>Subject</p>
+            <p className=" mx-3">Subject</p>
           </div>
           <div className="second">
             <InputComp placeholder="Enter subject here" fullWidth />
             <TextareaAutosize
               minRows={9}
-              style={{ width: 870 }}
+              style={{ width: "54rem" }}
               className=" mt-5 pt-2 px-2"
               placeholder="Enter your message here....."
             ></TextareaAutosize>
@@ -88,10 +101,15 @@ const SingleMessagePage = () => {
 
 const Wrapper = styled.div`
   .header {
+    &-top {
+      align-items: center;
+      justify-content: space-between;
+    }
     .text {
       text-decoration: underline;
     }
     &-content {
+      align-items: center;
       gap: 1rem;
       .left {
         flex: 1;

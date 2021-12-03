@@ -1,18 +1,18 @@
 import HeaderComp from "components/HeaderComp";
 import SidebarComp from "components/SidebarComp";
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-const MessageLayout = ({ children }: { children: React.ReactChild }) => {
+const ProfileLayout = ({ children }: { children: React.ReactChild }) => {
   return (
     <Wrapper>
       <HeaderComp />
       <div className="bottom-header bg-light-primary pt-2 pb-0">
         <nav className="container">
           <ul className="nav">
-            <Link to="/attendance" className="link">
-              <li className="nav-item active me-5 pb-2">Messages</li>
+            <Link to="/profile" className="link">
+              <li className="nav-item active me-5 pb-2">Profile</li>
             </Link>
           </ul>
         </nav>
@@ -25,10 +25,10 @@ const MessageLayout = ({ children }: { children: React.ReactChild }) => {
   );
 };
 
-export default MessageLayout;
+export default ProfileLayout;
 
 const Wrapper = styled.div`
-  .main {
+    .main {
     display: flex;
     &-aside {
       margin-top: 1rem;

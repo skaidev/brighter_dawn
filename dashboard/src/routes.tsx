@@ -14,6 +14,8 @@ import AttendanceLayout from "layouts/AttendanceLayout";
 import MessagesPage from "pages/messages";
 import MessageLayout from "layouts/MessageLayout";
 import SingleMessagePage from "pages/messages/[id]";
+import ProfileLayout from "layouts/ProfileLayout";
+import ProfilePage from "pages/profile";
 
 interface IProp {
 	component: React.ElementType;
@@ -101,6 +103,13 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				path="/singlemessage"
 				component={SingleMessagePage}
 				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/profile"
+				component={ProfilePage}
+				layout={ProfileLayout}
 				isAuth={false}
 			/>
 		</Switch>
