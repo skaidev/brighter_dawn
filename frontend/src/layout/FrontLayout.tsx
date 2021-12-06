@@ -1,17 +1,25 @@
 // import HeaderComp from "components/HeaderComp";
 import React from "react";
+import styled from "styled-components";
 import FooterComp from "../components/FooterComp";
 
 const FrontLayout = ({ children }: { children: React.ReactChild }) => {
 	return (
-		<div className="front">
-			<div className="front-main">
-			{/* <HeaderComp /> */}
-				{children}
-				</div>
+		<Wrapper className="front">
+			<div className="front-main">{children}</div>
 			<FooterComp />
-		</div>
+		</Wrapper>
 	);
 };
 
 export default FrontLayout;
+
+const Wrapper = styled.div`
+	display: flex;
+
+	min-height: 100vh;
+	flex-direction: column;
+	.front-main {
+		flex: 1;
+	}
+`;
