@@ -1,7 +1,15 @@
 import { ArrowBack } from "@mui/icons-material";
-import { Container, Grid, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { ButtonComp } from "lib/ButtonComp";
+import { TableCellComp } from "lib/TableComp";
 import React from "react";
 import styled from "styled-components";
 
@@ -17,16 +25,66 @@ const ProfilePage = () => {
             <div className="top">
               <img src="/images/studentProfile.png" alt="" />
             </div>
-            <Typography>Login info</Typography>
+            {/* <Typography>Login info</Typography>
             <div className="first d-flex">
               <Typography>Username: 45673</Typography>
               <Typography>Password: 123456</Typography>
               <ButtonComp variant="outlined" className=" mt-0">
                 change password
               </ButtonComp>
-            </div>
+            </div> */}
           </div>
-          <div className="profile-card-box">
+          <TableContainer>
+            <TableRow>
+              <TableCellComp>Login info</TableCellComp>
+            </TableRow>
+            <TableRow>
+              <TableCellComp>Username: 45673</TableCellComp>
+              <TableCellComp>Password: 123456</TableCellComp>
+              <TableCellComp>
+                <ButtonComp variant="outlined" className=" mt-0">
+                  change password
+                </ButtonComp>
+              </TableCellComp>
+            </TableRow>
+          </TableContainer>
+          {profileItems.map((profile, i) => (
+            <TableContainer key={i}>
+              <TableRow>
+                <TableCellComp>{profile.title}</TableCellComp>
+              </TableRow>
+              <TableRow>
+                <TableCellComp>{profile.first}</TableCellComp>
+                <TableCellComp>{profile.mid}</TableCellComp>
+                <TableCellComp>{profile.last}</TableCellComp>
+              </TableRow>
+              <TableRow>
+                <TableCellComp>{profile.job}</TableCellComp>
+                <TableCellComp>{profile.edu}</TableCellComp>
+                <TableCellComp>{profile.emp}</TableCellComp>
+                <TableCellComp>{profile.hire}</TableCellComp>
+              </TableRow>
+              <TableRow>
+                <TableCellComp>{profile.stat}</TableCellComp>
+                <TableCellComp>{profile.gen}</TableCellComp>
+                <TableCellComp>{profile.birth}</TableCellComp>
+                <TableCellComp>{profile.relg}</TableCellComp>
+              </TableRow>
+            </TableContainer>
+          ))}
+          {/* <TableContainer className="profile-card-box">
+            <TableRow>
+              <TableCellComp>Login info</TableCellComp>
+            </TableRow>
+            <TableRow>
+              <TableCellComp>Username: 45673</TableCellComp>
+              <TableCellComp>Password: 123456</TableCellComp>
+              <TableCellComp>
+              <ButtonComp variant="outlined" className=" mt-0">
+                change password
+              </ButtonComp>
+              </TableCellComp>
+            </TableRow>
             <Typography>Personal info</Typography>
             <div className="first d-flex">
               <Typography>First name: Obe</Typography>
@@ -68,7 +126,7 @@ const ProfilePage = () => {
               <Typography>Mobile: 08064734822</Typography>
               <Typography>Email: obepaulinah@gmail.com</Typography>
             </div>
-          </div>
+          </TableContainer> */}
         </Box>
       </Container>
     </Wrapper>
@@ -108,3 +166,37 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+const profileItems = [
+  {
+    title: "Personal info",
+    first: "First name: Obe",
+    mid: "Middle name: Ndalee",
+    last: "Last name: Sampson",
+    job: "Job Title: Obe",
+    edu: "Education: Master",
+    emp: "Employment Type: Full Time",
+    hire: "Hire Date: 04/12/2021",
+    stat: "Marital Status: Single",
+    gen: "Gender: Male",
+    birth: "Birth: 04/02/1992",
+    relg: "Religion: Christianity",
+  },
+  {
+    title: "Contact info",
+    first: "School Email: obendalee@rsu.edu.ng",
+    mid: "Personal Email: obendalee@gmail.com",
+    last: "School Mobile: 08131367090",
+    job: "Personal Mobile: 08131367090",
+    edu: "Street: 28 Elekahia Road",
+    emp: "City: Port Harcourt",
+    hire: "State: Rivers",
+    stat: "Country: Nigeria",
+  },
+  {
+    title: "Referee info",
+    first: "Emergency: Obe Paulinah",
+    mid: "Mobile: 08064734822",
+    last: "Email: obepaulinah@gmail.com",
+  },
+];

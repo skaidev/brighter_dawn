@@ -44,6 +44,16 @@ const SidebarComp = () => {
             </a>
           </Link>
         </li>
+        <li className="nav-item ">
+          <Link to="/student">
+            <a className="nav-link active">
+              <div className="nav-link_icon">
+                <i className=" fas fa-user-graduate"></i>
+              </div>
+              <div className="nav-link_text">Students</div>
+            </a>
+          </Link>
+        </li>
       </ul>
     </Aside>
   );
