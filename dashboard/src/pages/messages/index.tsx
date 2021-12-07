@@ -8,7 +8,6 @@ import {
   TableCell,
   TableContainer,
   TableRow,
-  TextField,
 } from "@mui/material";
 import { DoneAll } from "@mui/icons-material";
 import React from "react";
@@ -18,6 +17,7 @@ import SingleMessageComp from "components/messages/SingleMessageComp";
 import MenuMessageComp from "components/messages/MenuMessageComp";
 import { ButtonComp } from "lib/ButtonComp";
 import { InputComp } from "lib/InputComp";
+import SearchInputComp from "components/attendance/SearchInputComp";
 
 const MessagesPage = () => {
   return (
@@ -26,7 +26,8 @@ const MessagesPage = () => {
         <div className="message-left">
           <Box className="message-left-content">
             <div className="message-left-content-top p-3">
-              <InputComp placeholder="Search" fullWidth />
+              <SearchInputComp />
+              {/* <InputComp placeholder="Search" fullWidth /> */}
             </div>
             <div className="message-left-content-bottom d-flex mt-1 px-3 p-2">
               <MenuMessageComp />

@@ -6,28 +6,26 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  Table,
 } from "@mui/material";
 
 const StudentCard = () => {
   return (
     <Wrapper>
       <TableContainer>
-        <TableBody>
-          {studentCard.map((card, i) => (
-            <TableRow className="first" key={i}>
-              <TableCell>
-                <Checkbox />
-              </TableCell>
-              <TableCell>{card.name}</TableCell>
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell className="mb-0">{card.title}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
+        <Table>
+          <TableBody>
+            {studentCard.map((card, i) => (
+              <TableRow className="first" key={i}>
+                <TableCell>
+                  <Checkbox className="me-5" /> 
+                  {card.name}                                                             
+                </TableCell>
+                <TableCell className="mb-0">{card.title}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </TableContainer>
     </Wrapper>
   );

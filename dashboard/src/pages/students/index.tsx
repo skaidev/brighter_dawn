@@ -1,8 +1,8 @@
 import {
-  AddBox,
-  CheckBox,
-  CheckBoxOutlineBlank,
-  Delete,
+  AddBoxOutlined,
+  CheckBoxOutlineBlankOutlined,
+  CheckBoxOutlined,
+  DeleteOutlined,
 } from "@mui/icons-material";
 import {
   Container,
@@ -13,9 +13,11 @@ import {
   MenuItem,
 } from "@mui/material";
 import StudentCard from "components/attendance/StudentCard";
-import { InputComp, SelectComp } from "lib/InputComp";
+import { SelectComp } from "lib/InputComp";
+import { Link } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
+import SearchInputComp from "components/attendance/SearchInputComp";
 
 const StudentsPage = () => {
   return (
@@ -33,28 +35,28 @@ const StudentsPage = () => {
               </SelectComp>
             </FormControl>
           </div>
-          <InputComp className="bottom" fullWidth>
-            Search Names
-          </InputComp>
+          <SearchInputComp />
         </Box>
-        <div className="student-card">
-          <StudentCard />
-          <StudentCard />
-          <StudentCard />
-          <StudentCard />
-        </div>
-        <div className="base d-flex">
+        <Link to="/singlestudent">
+          <div className="student-card">
+            <StudentCard />
+            <StudentCard />
+            <StudentCard />
+            <StudentCard />
+          </div>
+        </Link>
+        <Box className="base d-flex">
           <div className=" d-flex">
-            <AddBox />
-            <Typography>Add</Typography>
+            <AddBoxOutlined style={{ color: "white" }} />
+            <Typography className="desc">Add</Typography>
           </div>
           <div className=" d-flex">
-            <Delete />
-            <Typography>Delete</Typography>
+            <DeleteOutlined style={{ color: "white" }} />
+            <Typography className="desc">Delete</Typography>
           </div>
-          <CheckBox />
-          <CheckBoxOutlineBlank />
-        </div>
+          <CheckBoxOutlined style={{ color: "white" }} />
+          <CheckBoxOutlineBlankOutlined style={{ color: "white" }} />
+        </Box>
       </Container>
     </Wrapper>
   );
@@ -78,15 +80,26 @@ const Wrapper = styled.div`
       .bottom {
         margin-top: 1.5rem;
       }
+
+      .icon {
+        position: relative;
+        bottom: 2.5rem;
+      }
     }
 
     &-card {
       height: 30rem;
       overflow: scroll;
     }
+  }
+  .base {
+    justify-content: space-around;
+    padding: 0.5rem;
+    border: 1px solid #1271bb;
+    background-color: #1271bb;
 
-	.base {
-		justify-content: space-evenly;
-	}
+    .desc {
+      color: #fff;
+    }
   }
 `;

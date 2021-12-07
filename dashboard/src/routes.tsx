@@ -18,6 +18,7 @@ import ProfileLayout from "layouts/ProfileLayout";
 import ProfilePage from "pages/profile";
 import StudentsPage from "pages/students";
 import StudentLayout from "layouts/StudentLayout";
+import SingleStudentPage from "pages/students/[id]";
 
 interface IProp {
 	component: React.ElementType;
@@ -118,6 +119,13 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				proctected={false}
 				path="/student"
 				component={StudentsPage}
+				layout={StudentLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/singlestudent"
+				component={SingleStudentPage}
 				layout={StudentLayout}
 				isAuth={false}
 			/>
