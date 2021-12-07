@@ -3,15 +3,12 @@ import {
 	createHttpLink,
 	InMemoryCache,
 	NormalizedCacheObject,
-	split,
 } from "@apollo/client";
-import { WebSocketLink } from "@apollo/client/link/ws";
-import { getMainDefinition } from "@apollo/client/utilities";
 import fetch from "isomorphic-unfetch";
 import jscookie from "js-cookie";
 import { NextPageContext } from "next";
 import { useMemo } from "react";
-import { STRAPI_URI, TOKEN_NAME, WS_URI } from "../utils/constants";
+import { STRAPI_URI, TOKEN_NAME } from "../utils/constants";
 import { getTokenCookie } from "../utils/cookieUtils";
 
 let apolloClient: ApolloClient<any>;
@@ -38,53 +35,20 @@ export const apolloStrapi: ApolloClient<NormalizedCacheObject> =
 	});
 
 const createLink = (initialState: any, token: string) => {
-	const cookie = process.browser
-		? "Bearer " + jscookie.get(TOKEN_NAME)
-		: "Bearer " + token;
+	const cookie = process.browser ? jscookie.get(TOKEN_NAME) : token;
 	const httpLink = createHttpLink({
 		uri,
 		fetch,
 		credentials: "include",
 		headers: {
-			cookie: token || " ",
+			cookie,
 		},
 	});
-
-	const wsLink: any = process.browser
-		? new WebSocketLink({
-				uri: `${WS_URI}/api/v1/graphql`,
-				options: {
-					reconnect: true,
-					lazy: true,
-					timeout: 20000,
-
-					connectionParams: () => ({
-						header: {
-							Authorization: cookie || " ",
-						},
-					}),
-				},
-		  })
-		: null;
-
-	const link = process.browser
-		? split(
-				({ query }) => {
-					const definition = getMainDefinition(query);
-					return (
-						definition.kind === "OperationDefinition" &&
-						definition.operation === "subscription"
-					);
-				},
-				wsLink,
-				httpLink,
-		  )
-		: httpLink;
 
 	return new ApolloClient({
 		connectToDevTools: process.browser,
 		ssrMode: !process.browser,
-		link,
+		link: httpLink,
 		cache: new InMemoryCache().restore(initialState || {}),
 	});
 };

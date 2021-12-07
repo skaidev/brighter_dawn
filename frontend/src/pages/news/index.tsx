@@ -30,6 +30,7 @@ const NewsPage = ({ initialArticles }: { initialArticles: IArticle[] }) => {
 									icon={faSearch}
 									width={20}
 									style={{ color: "#c4c4c4" }}
+									className='mt-2'
 								/>
 							</span>
 							<input
