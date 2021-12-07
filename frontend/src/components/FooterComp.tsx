@@ -30,14 +30,22 @@ const FooterComp = () => {
             <p>
               <ul className="links p-0">
                 <li>
-                  <Link href="">
+                  <Link href="#about">
                     <a href="" className=" fw-light text-capitalize fs-14">
                       about us
                     </a>
                   </Link>
-                  <p className="fw-400 mb-2 mt-1 px-2">News</p>
+                  
+                  {/* <p className="fw-400 mb-2 mt-1 px-2">News</p> */}
                   <p>
                     <ul className="links p-0">
+                    <li>
+                  <Link href="/news">
+                    <a href="" className=" fw-light text-capitalize fs-14">
+                      news
+                    </a>
+                  </Link>
+                  </li>
                       <li>
                         <Link href="">
                           <a href="" className=" fw-light fs-14">
@@ -46,7 +54,7 @@ const FooterComp = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="">
+                        <Link href="/events">
                           <a href="" className=" fw-light fs-14">
                             Recent Events
                           </a>

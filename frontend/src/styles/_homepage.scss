@@ -1,4 +1,6 @@
 // hero section
+
+
 .homepage {
   .hero {
     &-wrapper {
@@ -74,8 +76,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      //   background-color: blue;
+      margin: auto;
+      width: 100%;
+      max-width: 800px;
+      
+        // background-color: blue;
       @media screen and (max-width: 1000px) {
         flex-direction: column;
       }
@@ -246,9 +251,13 @@
       rgba(254, 242, 1, 0.096) -3.4%,
       rgba(109, 183, 68, 0.048) 117.29%
     );
+    
 
     &-sect {
       display: flex;
+      width: 100%;
+      
+      
 
       &-img {
         ul {
@@ -262,7 +271,57 @@
         }
       }
     }
+    .bit{
+      // background-color: red;
+      width: inherit;
+      justify-content: flex-end;
+    }
   }
+
+  .facilities{
+    gap: 4rem;
+    margin-top: 10rem;
+    
+
+    @media screen and (max-width:1000px){
+      flex-direction: column;
+    }
+    
+   .four-img{
+     width: 100%;
+     
+     
+     .top{
+       gap: 2rem;
+       @media screen and (max-width:768px){
+        flex-direction: column;
+      }
+     }
+     .bottom{
+       gap: 2rem;
+       @media screen and (max-width:768px){
+        flex-direction: column;
+      }
+     }
+   }
+    .text-content{
+      width: 100%;
+
+      .stuff{
+        &-active{
+          padding: 0.125rem;
+          border: 1px solid $light_success;
+          background-color: $light_success;
+          border-radius: 5px;
+          color: $gray;
+        }
+      }
+      
+    }
+
+  }
+
+
 
   .testimonial {
     padding-top: 2rem;
