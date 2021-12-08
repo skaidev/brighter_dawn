@@ -11,6 +11,14 @@ export const InputComp = styled(TextField)`
   }
 `;
 
+export const InputCompTwo = styled(TextField)`
+  &.MuiOutlinedInput-input, .MuiInputBase-input, .MuiInputBase-inputSizeSmall, .css-1udluuh-MuiInputBase-input-MuiOutlinedInput-input  {
+    padding: 0 .4rem .4rem .6rem;
+    width: 6.375rem;
+    border-radius: 5px;
+  }
+`;
+
 export const SelectComp  = styled(Select)`
 &.MuiSelect-select, .MuiSelect-outlined, .MuiOutlinedInput-input, .MuiInputBase-input 
 {

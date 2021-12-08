@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const SidebarComp = () => {
   return (
@@ -15,44 +15,44 @@ const SidebarComp = () => {
           </a>
         </li>
         <li className="nav-item ">
-          <Link to="/attendance">
-            <a className="nav-link active">
+          <NavLink activeClassName="active" to="/attendance">
+            <a className="nav-link">
               <div className="nav-link_icon">
                 <i className="fas fa-calendar"></i>
               </div>
               <div className="nav-link_text">Attendance</div>
             </a>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item ">
-          <Link to="/messages">
-            <a className="nav-link active">
+          <NavLink activeClassName="active" to="/messages">
+            <a className="nav-link">
               <div className="nav-link_icon">
                 <i className="fas fa-comment"></i>
               </div>
               <div className="nav-link_text">Messages</div>
             </a>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item ">
-          <Link to="/profile">
-            <a className="nav-link active">
+          <NavLink activeClassName="active" to="/profile">
+            <a className="nav-link">
               <div className="nav-link_icon">
                 <i className="fas fa-address-card"></i>
               </div>
               <div className="nav-link_text">Profile</div>
             </a>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item ">
-          <Link to="/student">
-            <a className="nav-link active">
+          <NavLink activeClassName="active" to="/student">
+            <a className="nav-link">
               <div className="nav-link_icon">
                 <i className=" fas fa-user-graduate"></i>
               </div>
               <div className="nav-link_text">Students</div>
             </a>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </Aside>

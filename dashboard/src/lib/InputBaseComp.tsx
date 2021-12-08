@@ -9,3 +9,10 @@ export const StyledInputBase = styled(InputBase)`
   border: 1px solid #d6d6d6;
   background-color: #f9fcfe;
 `;
+
+export const TextIputBase = styled(InputBase)`
+  padding: 0.2rem 0.2rem 0.2rem 0.6rem;
+  width: 8rem;
+  border: 1px solid #D6D6D6;
+  border-radius: 5px;
+`;
