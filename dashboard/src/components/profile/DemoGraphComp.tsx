@@ -22,7 +22,9 @@ const DemoGraphCompPage = () => {
       <Container className="demograph">
         <div className="demograph-top d-flex">
           <Typography>Obe Sampson Ndalee</Typography>
-          <ButtonComp variant="outlined">Edit Obe’s Info</ButtonComp>
+          <ButtonComp variant="outlined" className=" text-capitalize">
+            Edit Obe’s Info
+          </ButtonComp>
         </div>
         <TableContainer className="demograph-mid">
           <Table>
@@ -84,10 +86,10 @@ const DemoGraphCompPage = () => {
               <Table>
                 <TableHead className="head">
                   <TableRow>
-                    <TableCell>Subjects</TableCell>
-                    <TableCell>Class</TableCell>
-                    <TableCell>Subjects</TableCell>
-                    <TableCell>Class</TableCell>
+                    <TableCell className=" fw-bold">Subjects</TableCell>
+                    <TableCell className=" fw-bold">Class</TableCell>
+                    <TableCell className=" fw-bold">Subjects</TableCell>
+                    <TableCell className=" fw-bold">Class</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -102,7 +104,7 @@ const DemoGraphCompPage = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <div className="demograph-left-base d-flex mt-0">
+            <div className=" d-flex">
               <ButtonComp variant="contained" className=" text-capitalize">
                 Edit Row
               </ButtonComp>
@@ -113,6 +115,67 @@ const DemoGraphCompPage = () => {
           </div>
           <div className="demograph-right">
             <img src="/images/demoStudent.png" alt="" />
+            <div className="bottom mt-2">
+              <Typography className="p1">Last Login:</Typography>
+              <Typography className="p2">May 2 2021 10:45AM</Typography>
+            </div>
+          </div>
+        </Box>
+
+        <Box className="demograph-base mt-4">
+          <div className="top">
+            <Typography className=" fw-bold">Siblings & Contacts</Typography>
+          </div>
+          <TableContainer className="mid">
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCellComp className=" fw-bold">
+                    Relationship/Name
+                  </TableCellComp>
+                  <TableCellComp></TableCellComp>
+                  <TableCellComp className=" fw-bold">
+                    Phone Numbers
+                  </TableCellComp>
+                  <TableCellComp className=" fw-bold">
+                    Email Addresses
+                  </TableCellComp>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {contactItems.map((contact, i) => (
+                  <TableRow key={i}>
+                    <TableCellComp>
+                      {contact.title} <br /> {contact.name}
+                    </TableCellComp>
+                    <TableCellComp>{contact.desc}</TableCellComp>
+                    <TableCellComp>{contact.tel}</TableCellComp>
+                    <TableCellComp>{contact.email}</TableCellComp>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <div className="base d-flex">
+            <ButtonComp variant="contained" className="mt-0 text-capitalize">
+              Add row
+            </ButtonComp>
+            <ButtonComp variant="outlined" className="mt-0 text-capitalize">
+              Add column
+            </ButtonComp>
+          </div>
+        </Box>
+
+        <Box className="demograph-bottom mt-4">
+          <div className="top">
+            <Typography className=" fw-bold">Student Notes</Typography>
+          </div>
+          <div className="mid">
+          <Typography className="p">
+            ***STILL NEED TO COLLECT IMMUNIZATION RECORDS***
+          </Typography>
+          <Typography className="p">Basketball approval pending physical results.</Typography>
+          <Typography className="p">9/3/2020: Out sick - doctor’s note received</Typography>
           </div>
         </Box>
       </Container>
@@ -135,10 +198,10 @@ const Wrapper = styled.div`
     }
 
     &-midtwo {
-        /* align-items: center; */
-        margin-top: 1rem;
+      /* align-items: center; */
+      margin-top: 1rem;
       .demograph-left {
-          flex: 4;
+        flex: 4;
         &-bottom {
           border: 0.5px solid #d6d6d6;
 
@@ -151,13 +214,58 @@ const Wrapper = styled.div`
         }
       }
       .demograph-right {
-          flex: 1;
-          
-          img {
-              width: 100%;
-              object-fit: cover;
-              /* height: 100%; */
+        flex: 1;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          /* height: 100%; */
+        }
+        .bottom {
+          padding: 0.5rem;
+          border: 0.5px solid #d6d6d6;
+          box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
+
+          .p1 {
+            font-size: 0.875rem;
+            color: #777777;
           }
+          .p2 {
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+
+    &-base {
+      .top {
+        padding: 1rem;
+        border: 1px solid #d6d6d6;
+        background-color: #d6e9f7;
+      }
+      .mid {
+        border: 1px solid #d6d6d6;
+      }
+      .base {
+        justify-content: space-between;
+      }
+    }
+
+    &-bottom {
+      box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+      .top {
+        padding: 1rem;
+        border: 1px solid #d6d6d6;
+        background-color: #d6e9f7;
+      }
+      .mid {
+        padding: 2rem 1rem;
+        color: #004B81;
+        overflow: scroll;
+
+        .p {
+          line-height: 2.5;
+        }
       }
     }
   }
@@ -181,5 +289,28 @@ const gradeItems = [
     desc: "SS 2",
     subject: "Christian Religious Studies",
     term: "SS 2",
+  },
+];
+
+const contactItems = [
+  {
+    title: "Aunt:",
+    name: "Obe Lucy",
+    desc: "Authorized for pick up",
+    tel: "08131367090",
+    email: "obendalee@gmail.com",
+  },
+  {
+    title: "Dentist:",
+    name: "Nnam Lazarus",
+    desc: "(EnrollMe Contact)",
+    tel: "08131367090",
+    email: "obendalee@gmail.com",
+  },
+  {
+    title: "Doctor:",
+    name: "Obe Jephthah",
+    tel: "08100459057",
+    email: "obendalee@gmail.com",
   },
 ];

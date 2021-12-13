@@ -1,5 +1,6 @@
 import { Tab, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import ContactCompPage from "components/profile/ContactComp";
 import DemoGraphCompPage from "components/profile/DemoGraphComp";
 import React from "react";
 import styled from "styled-components";
@@ -81,7 +82,7 @@ const TabCompPage = () => {
         <DemoGraphCompPage />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        contacts
+        <ContactCompPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
         addresses

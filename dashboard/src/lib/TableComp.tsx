@@ -7,3 +7,9 @@ export const TableCellComp = styled(TableCell)`
         border-bottom: none;
     }
 `
+
+// export const TableCellCompTwo = styled(TableCell)`
+//     &.css-1638ivx-MuiTableCell-root {
+//         border-bottom: none;
+//     }
+// `
