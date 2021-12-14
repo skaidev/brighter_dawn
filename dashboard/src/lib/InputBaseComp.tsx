@@ -15,4 +15,5 @@ export const TextIputBase = styled(InputBase)`
   width: 8rem;
   border: 1px solid #D6D6D6;
   border-radius: 5px;
+  background-color: white;
 `;

@@ -1,5 +1,6 @@
 import { Tab, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import AddressPage from "components/address/AdProfileComp";
 import ContactCompPage from "components/profile/ContactComp";
 import DemoGraphCompPage from "components/profile/DemoGraphComp";
 import React from "react";
@@ -85,7 +86,7 @@ const TabCompPage = () => {
         <ContactCompPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        addresses
+        <AddressPage />
       </TabPanel>
       <TabPanel value={value} index={3}>
         login info
