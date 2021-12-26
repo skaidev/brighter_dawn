@@ -15,13 +15,13 @@ const HeaderComp: React.FC = (): JSX.Element => {
 
 	return (
 		<Header className="front-header">
-			<nav className="navbar container">
+			<nav className="navbar container ">
 				<i
 					className="fas fa-2x fa-bars d-md-none"
 					role="button"
 					onClick={() => setMenu(true)}
 				></i>
-				<ul className="nav d-none d-md-flex">
+				<ul className="nav d-none d-md-flex mx-2">
 					{navItems.map((nav, i) => (
 						<li className="nav-item" key={i}>
 							<Link href={nav.name === "Home" ? "/" : (nav?.link as string)}>
@@ -36,14 +36,18 @@ const HeaderComp: React.FC = (): JSX.Element => {
 						</li>
 					))}
 				</ul>
+				<div className="logo d-flex ">
 				<Link href="/">
-					<a className="navbar-brand">
+					<a className="navbar-brand ">
 						<img src="/images/logo.png" alt="" />
 					</a>
 				</Link>
+				</div>
+				<div className="enroll ">
 				<Link href='/registration'>
 					<a className="btn btn-lg btn-outline-dark px-5 fs-6 fw-500 pr-5 ">Enroll</a>
 				</Link>
+				</div>
 			</nav>
 			{menu && (
 				<div className="mobile-nav d-md-none">
@@ -99,4 +103,11 @@ const Header = styled.header`
 	.active {
 		color: #f6821f;
 	}
+	.logo{
+		
+		margin-right: 9rem;
+		}
+		.enroll{
+			margin-right: 2rem;
+		}
 `;
