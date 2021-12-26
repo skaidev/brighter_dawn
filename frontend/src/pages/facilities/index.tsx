@@ -10,6 +10,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FormComp from "components/form/FormComp";
 
 const FacilitiesPage = () => {
   return (
@@ -237,40 +238,7 @@ const FacilitiesPage = () => {
           </div>
           <div className='right'>
             <p className='josefin fs-36 fw-400'>Send Us a Message</p>
-            <form action='' className=''>
-              <div className=' d-flex mb-4'>
-                <input
-                  type='text'
-                  placeholder='Name'
-                  className=' form-control me-5'
-                />
-                <input
-                  type='text'
-                  placeholder='Last Name'
-                  className=' form-control'
-                />
-              </div>
-              <div className=' d-flex mb-4'>
-                <input
-                  type='email'
-                  placeholder='Email'
-                  className=' form-control me-5'
-                />
-                <input
-                  type='text'
-                  placeholder='Category'
-                  className=' form-control'
-                />
-              </div>
-              <textarea
-                placeholder='Message'
-                className=' form-control pb-5'></textarea>
-              <div className=' d-flex justify-content-end'>
-                <button className=' btn btn-lg bg-primary mt-5 text-capitalize'>
-                  submit
-                </button>
-              </div>
-            </form>
+            <FormComp/>
           </div>
         </section>
 

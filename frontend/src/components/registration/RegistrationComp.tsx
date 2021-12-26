@@ -658,7 +658,7 @@ const StepFour = () => {
           Do you authorize your childs healthcare provider and designated
           provider of healthcare in the school setting to discuss my childs
           health concerns and/or exchange information pertaining to this form.
-          This authorization will be in place until or unless you <br />{" "}
+          This authorization will be in place until or unless you 
           withdraw it, you may withdraw your authorization at anytime by
           contacting the school. When information is released from your child
           record, documentation of the disclosure is maintained in your childs

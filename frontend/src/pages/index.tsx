@@ -5,6 +5,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FormComp from "components/form/FormComp";
 import HeaderComp from "components/HeaderComp";
 import EventIntroComp from "components/home/EventIntroComp";
 import NewsIntroComp from "components/home/NewsIntroComp";
@@ -37,9 +38,12 @@ const HomePage = () => {
                   {" "}
                   ......Intergrity, Creativity & Excellence
                 </p>
-                <button className='btn btn-lg btn-primary text-capitalize px-4 mt-5 fw-500 fs-18'>
-                  enroll now
-                </button>
+
+                <Link href='/registration'>
+                  <a className='btn btn-lg btn-primary text-capitalize px-4 mt-5 fw-500 fs-18 '>
+                    enroll now
+                  </a>
+                </Link>
               </div>
               <div className='right d-none d-md-block flex-grow-1 '>
                 <img
@@ -65,7 +69,7 @@ const HomePage = () => {
                     About <br />
                     Brighter Dawn
                   </h2>
-                  <p className=' fs-18 fw-lighter  mt-5'>
+                  <p className=' fs-18 fw-lighter  mt-3'>
                     In Brighter Dawn, we raise happy, <br /> self confident,
                     independent, highly motivated pupils.
                   </p>
@@ -91,7 +95,9 @@ const HomePage = () => {
                       <p className='dam mt-4 fs-18 fw-bold josefin'>
                         Madam Damati{" "}
                       </p>
-                      <p className='fs-18 fw-lighter '>Director, Brighter Dawn Schools </p>
+                      <p className='fs-18 fw-lighter '>
+                        Director, Brighter Dawn Schools{" "}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -209,7 +215,7 @@ const HomePage = () => {
                     ullamco laboris nisi ut .
                   </p>
                 </div>
-                <div className='stuff d-flex justify-content-between '>
+                <div className='stuff d-flex '>
                   {properties.map((property, i) => {
                     return (
                       <div
@@ -221,7 +227,7 @@ const HomePage = () => {
                   })}
                 </div>
                 <Link href={`/facilities`}>
-                  <a className='text-decoration-none mt-2'>
+                  <a className='text-decoration-none '>
                     <p>Read more</p>
                   </a>
                 </Link>
@@ -389,40 +395,7 @@ const HomePage = () => {
             </div>
             <div className='right'>
               <p className='josefin fs-36 fw-400'>Send Us a Message</p>
-              <form action='' className=''>
-                <div className=' d-flex mb-4'>
-                  <input
-                    type='text'
-                    placeholder='Name'
-                    className=' form-control me-5'
-                  />
-                  <input
-                    type='text'
-                    placeholder='Last Name'
-                    className=' form-control'
-                  />
-                </div>
-                <div className=' d-flex mb-4'>
-                  <input
-                    type='email'
-                    placeholder='Email'
-                    className=' form-control me-5'
-                  />
-                  <input
-                    type='text'
-                    placeholder='Category'
-                    className=' form-control'
-                  />
-                </div>
-                <textarea
-                  placeholder='Message'
-                  className=' form-control pb-5'></textarea>
-                <div className=' d-flex justify-content-end'>
-                  <button className=' btn btn-lg bg-primary mt-5 text-capitalize'>
-                    submit
-                  </button>
-                </div>
-              </form>
+              <FormComp/>
             </div>
           </section>
 
