@@ -1,18 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { FormControlLabel, Container, Checkbox } from "@mui/material";
+import {
+  Checkbox,
+  TableContainer,
+  TableBody,
+  TableRow,
+  TableCell,
+  Table,
+} from "@mui/material";
 
 const StudentCard = () => {
   return (
     <Wrapper>
-      <Container className="student-card">
-        {studentCard.map((card, i) => (
-          <div className="first d-flex" key={i}>
-            <FormControlLabel control={<Checkbox />} label="Obe Sampson" />
-            <p className="mb-0">{card.title}</p>
-          </div>
-        ))}
-      </Container>
+      <TableContainer>
+        <Table>
+          <TableBody>
+            {studentCard.map((card, i) => (
+              <TableRow className="first" key={i}>
+                <TableCell>
+                  <Checkbox className="me-5" /> 
+                  {card.name}                                                             
+                </TableCell>
+                <TableCell className="mb-0">{card.title}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Wrapper>
   );
 };
@@ -24,7 +38,7 @@ const Wrapper = styled.div`
     .first {
       align-items: center;
       justify-content: space-between;
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
       border-bottom: 1px solid #e5e5e5;
     }
   }

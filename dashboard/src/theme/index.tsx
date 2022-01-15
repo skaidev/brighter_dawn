@@ -44,6 +44,7 @@ export const theme = createTheme({
 					paddingLeft: "4%",
 					paddingRight: "4%",
 					borderRadius: 0,
+					// boxShadow: "none"
 				},
 			},
 		},

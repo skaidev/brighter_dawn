@@ -13,6 +13,12 @@ import ViewAttend from "pages/attendance/ViewAttend";
 import AttendanceLayout from "layouts/AttendanceLayout";
 import MessagesPage from "pages/messages";
 import MessageLayout from "layouts/MessageLayout";
+import SingleMessagePage from "pages/messages/[id]";
+import ProfileLayout from "layouts/ProfileLayout";
+import ProfilePage from "pages/profile";
+import StudentsPage from "pages/students";
+import StudentLayout from "layouts/StudentLayout";
+import SingleStudentPage from "pages/students/[id]";
 
 interface IProp {
 	component: React.ElementType;
@@ -93,6 +99,34 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				path="/messages"
 				component={MessagesPage}
 				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/singlemessage"
+				component={SingleMessagePage}
+				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/profile"
+				component={ProfilePage}
+				layout={ProfileLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/student"
+				component={StudentsPage}
+				layout={StudentLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/singlestudent"
+				component={SingleStudentPage}
+				layout={StudentLayout}
 				isAuth={false}
 			/>
 		</Switch>
