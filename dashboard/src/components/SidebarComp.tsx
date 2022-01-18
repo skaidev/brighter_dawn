@@ -54,6 +54,16 @@ const SidebarComp = () => {
             </a>
           </NavLink>
         </li>
+        <li className="nav-item ">
+          <NavLink activeClassName="active" to="/staff">
+            <a className="nav-link">
+              <div className="nav-link_icon">
+                <i className=" fas fa-id-badge"></i>
+              </div>
+              <div className="nav-link_text">Staff</div>
+            </a>
+          </NavLink>
+        </li>
       </ul>
     </Aside>
   );

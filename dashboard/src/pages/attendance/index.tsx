@@ -3,6 +3,9 @@ import {
   Grid,
   Container,
   TextField,
+  FormControl,
+  InputLabel,
+  MenuItem,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import AttendanceCard from "components/attendance/AttendanceCard";
@@ -10,6 +13,8 @@ import StudentCard from "components/attendance/StudentCard";
 import styled from "styled-components";
 import SelectInputComp from "components/attendance/SelectInputComp";
 import { ButtonComp } from "lib/ButtonComp";
+import { SelectComp } from "lib/InputComp";
+import { StyledInputBase, TextIputBase } from "lib/InputBaseComp";
 
 const TakeAttendComp = () => {
   return (
@@ -19,11 +24,17 @@ const TakeAttendComp = () => {
           <Box className="attendance-left-top">
             <p>Smart Lists:</p>
             <div className=" mb-4">
-            <SelectInputComp />
+              <FormControl fullWidth>
+                <InputLabel>Everyone</InputLabel>
+                <SelectComp>
+                  <MenuItem>Obe Sampson</MenuItem>
+                  <MenuItem>Obe Sampson</MenuItem>
+                  <MenuItem>Obe Sampson</MenuItem>
+                </SelectComp>
+              </FormControl>
             </div>
-            {/* <i className=" fas fa-search"></i> */}
             <form noValidate>
-              <TextField label="Search Names, Reg no" fullWidth></TextField>
+              <StyledInputBase placeholder="Search Names, Reg no" fullWidth />
             </form>
           </Box>
           <StudentCard />

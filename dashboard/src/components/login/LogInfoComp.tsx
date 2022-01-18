@@ -35,7 +35,7 @@ const LogInfoPage = () => {
                 <TableRow>
                   <TableCellCompTwo>Family 1:</TableCellCompTwo>
                   <TableCellCompTwo>
-                    <TextIputBase fullWidth />
+                    <TextIputBase placeholder="Sampson" fullWidth />
                   </TableCellCompTwo>
                   <TableCellCompTwo>
                     <TextIputBase fullWidth />
@@ -47,7 +47,7 @@ const LogInfoPage = () => {
                 <TableRow>
                   <TableCellCompTwo>Student:</TableCellCompTwo>
                   <TableCellCompTwo>
-                    <TextIputBase fullWidth />
+                    <TextIputBase placeholder="5089" fullWidth />
                   </TableCellCompTwo>
                   <TableCellCompTwo>
                     <TextIputBase fullWidth />
