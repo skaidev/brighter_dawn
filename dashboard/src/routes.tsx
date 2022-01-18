@@ -117,7 +117,7 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 			/>
 			<AppRoutes
 				proctected={false}
-				path="/student"
+				path="/students"
 				component={StudentsPage}
 				layout={StudentLayout}
 				isAuth={false}

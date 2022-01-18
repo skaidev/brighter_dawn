@@ -9,49 +9,56 @@ import {
   TableRow,
   TableHead,
   Container,
-  Table,
-  Box,
 } from "@mui/material";
 import { ButtonComp } from "lib/ButtonComp";
-import { TableCellComp } from "lib/TableComp";
 
 const AttendanceCard = () => {
   return (
     <Wrapper>
       <Container>
-        <Box className="top">
-          <div>Student Attendance Record</div>
-          <div>Friday, 15/10/2021</div>
-        </Box>
         <TableContainer className="attendance">
-          <Table>
-            {/* <TableHead className=" right-top">
-              <TableRow className="right-top-row">
-                <TableCellComp className=" first">
-                  Student Attendance Record
-                </TableCellComp>
-                <TableCellComp className="fw-600 first">
-                  Friday, 15/10/2021
-                </TableCellComp>
+          <TableHead className=" right-top">
+            <TableRow className="right-top-row">
+              <TableCell className=" first">
+                Student Attendance Record
+              </TableCell>
+              <TableCell />
+              <TableCell />
+              <TableCell />
+              <TableCell />
+              <TableCell className="fw-600 first">Friday, 15/10/2021</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {/* <TableRow>
+              <TableCell />
+              <TableCell />
+              <TableCell />
+              <TableCell className="attendance-desc">
+                Select all
+                <span>
+                  <Checkbox />
+                </span>
+              </TableCell>
+            </TableRow> */}
+            {attends.map((attend, i) => (
+              <TableRow className="attendance-top" key={i}>
+                <TableCell>
+                  <img src={attend.img} className=" me-2" alt="" />{" "}
+                  <span>{attend.name}</span>
+                </TableCell>
+                <TableCell />
+                <TableCell />
+                <TableCell>{attend.basic}</TableCell>
+                <TableCell />
+                <TableCell>
+                  <Grid container justifyContent="flex-end">
+                    <Checkbox />
+                  </Grid>
+                </TableCell>
               </TableRow>
-            </TableHead> */}
-            <TableBody>
-              {attends.map((attend, i) => (
-                <TableRow className="attendance-top" key={i}>
-                  <TableCellComp>
-                    <img src={attend.img} className=" me-2" alt="" />{" "}
-                    <span>{attend.name}</span>
-                  </TableCellComp>
-                  <TableCellComp>{attend.basic}</TableCellComp>
-                  <TableCellComp>
-                    <Grid container justifyContent="flex-end">
-                      <Checkbox />
-                    </Grid>
-                  </TableCellComp>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+            ))}
+          </TableBody>
         </TableContainer>
         <Grid container justifyContent="flex-end">
           <ButtonComp variant="contained">submit</ButtonComp>
@@ -64,14 +71,6 @@ const AttendanceCard = () => {
 export default AttendanceCard;
 
 const Wrapper = styled.div`
-  .top {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    border: 1px solid #1271bb;
-    background-color: #1271bb;
-    color: #fff;
-  }
   .attendance {
     &-desc {
       color: ${(prop) => prop.theme.palette.primary.main};

@@ -4,16 +4,18 @@ import "./styles/index.scss";
 import "./styles/custom.scss";
 import { ThemeProvider } from "@mui/material/styles";
 import { styledTheme, theme } from "theme";
-import "bootstrap/dist/js/bootstrap.js";
-import {ThemeProvider as StyledThemeProvider} from "styled-components"
+// import "bootstrap/dist/js/bootstrap.js";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const App = () => {
 	return (
-		<StyledThemeProvider theme={styledTheme}>
-			<ThemeProvider theme={theme}>
-			<RouterComp isAuth={true} />
-		</ThemeProvider>
-		</StyledThemeProvider>
+		<div>
+			<StyledThemeProvider theme={styledTheme}>
+				<ThemeProvider theme={theme}>
+					<RouterComp isAuth={true} />
+				</ThemeProvider>
+			</StyledThemeProvider>
+		</div>
 	);
 };
 

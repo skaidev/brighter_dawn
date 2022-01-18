@@ -1,9 +1,7 @@
 import { Tab, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import AddressPage from "components/address/AdProfileComp";
-import FileCompPage from "components/files";
 import LogInfoPage from "components/login/LogInfoComp";
-import ProfileNoteComp from "components/notes";
 import ContactCompPage from "components/profile/ContactComp";
 import DemoGraphCompPage from "components/profile/DemoGraphComp";
 import React from "react";
@@ -95,13 +93,13 @@ const TabCompPage = () => {
         <LogInfoPage />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <ProfileNoteComp />
+        notes
       </TabPanel>
       <TabPanel value={value} index={5}>
         reports
       </TabPanel>
       <TabPanel value={value} index={6}>
-        <FileCompPage />
+        files
       </TabPanel>
     </Wrapper>
   );

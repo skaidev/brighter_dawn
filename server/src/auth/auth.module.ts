@@ -1,15 +1,19 @@
 import { CacheModule, Module } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { AuthResolver } from './auth.resolver';
+import { JwtModule } from '@nestjs/jwt';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from 'src/user/schema/user.schema';
-import { JwtModule } from '@nestjs/jwt';
 import { config } from '../utils';
+import { AuthResolver } from './auth.resolver';
+import { AuthService } from './auth.service';
+import { Auth, AuthSchema } from './schema/auth.schema';
 
 @Module({
   providers: [AuthResolver, AuthService],
   imports: [
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    MongooseModule.forFeature([
+      { name: User.name, schema: UserSchema },
+      { name: Auth.name, schema: AuthSchema },
+    ]),
     JwtModule.register({
       secret: config.SECRET,
     }),

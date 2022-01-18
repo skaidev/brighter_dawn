@@ -1,10 +1,22 @@
 scalar Date
 
+type Auth {
+  id: ID
+  email: String
+  google_id: String
+  username: String
+  phone: String
+  role: String
+  isActive: Boolean
+  emailToken: String
+  profile: User
+}
+
 type LoginResponse {
   id: ID
   token: String
   isActive: Boolean
-  user: User
+  authId: String
 }
 
 type Query {
@@ -14,10 +26,10 @@ type Query {
 }
 
 type Mutation {
-  createUser(input: UserInput): User
-  signup(input: SignupInput): User
+  createUser(input: UserInput): Auth
+  signup(input: SignupInput): Auth
   login(email: String, password: String): LoginResponse
-  verifyToken(token: String): User
+  verifyToken(token: String): Auth
   verifyOTP(otp: Int): User
   resendVerification(id: ID): User
   forgotPassword(phone: String): User
@@ -39,10 +51,8 @@ input LoginWithPhoneInput {
 
 input SignupInput {
   id: ID
-  firstName: String
-  lastName: String
-  name: String
-  password: String
-  phone: String
   email: String
+  username: String
+  phone: String
+  password: String
 }

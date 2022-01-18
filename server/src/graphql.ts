@@ -14,12 +14,10 @@ export interface LoginWithPhoneInput {
 
 export interface SignupInput {
     id?: Nullable<string>;
-    firstName?: Nullable<string>;
-    lastName?: Nullable<string>;
-    name?: Nullable<string>;
-    password?: Nullable<string>;
-    phone?: Nullable<string>;
     email?: Nullable<string>;
+    username?: Nullable<string>;
+    phone?: Nullable<string>;
+    password?: Nullable<string>;
 }
 
 export interface UserInput {
@@ -28,11 +26,23 @@ export interface UserInput {
     password?: Nullable<string>;
 }
 
+export interface Auth {
+    id?: Nullable<string>;
+    email?: Nullable<string>;
+    google_id?: Nullable<string>;
+    username?: Nullable<string>;
+    phone?: Nullable<string>;
+    role?: Nullable<string>;
+    isActive?: Nullable<boolean>;
+    emailToken?: Nullable<string>;
+    profile?: Nullable<User>;
+}
+
 export interface LoginResponse {
     id?: Nullable<string>;
     token?: Nullable<string>;
     isActive?: Nullable<boolean>;
-    user?: Nullable<User>;
+    authId?: Nullable<string>;
 }
 
 export interface IQuery {
@@ -44,10 +54,10 @@ export interface IQuery {
 }
 
 export interface IMutation {
-    createUser(input?: Nullable<UserInput>): Nullable<User> | Promise<Nullable<User>>;
-    signup(input?: Nullable<SignupInput>): Nullable<User> | Promise<Nullable<User>>;
+    createUser(input?: Nullable<UserInput>): Nullable<Auth> | Promise<Nullable<Auth>>;
+    signup(input?: Nullable<SignupInput>): Nullable<Auth> | Promise<Nullable<Auth>>;
     login(email?: Nullable<string>, password?: Nullable<string>): Nullable<LoginResponse> | Promise<Nullable<LoginResponse>>;
-    verifyToken(token?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
+    verifyToken(token?: Nullable<string>): Nullable<Auth> | Promise<Nullable<Auth>>;
     verifyOTP(otp?: Nullable<number>): Nullable<User> | Promise<Nullable<User>>;
     resendVerification(id?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
     forgotPassword(phone?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;

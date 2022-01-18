@@ -15,7 +15,6 @@ export const ButtonComp = styled(Button)`
 export const ButtonCompTwo = styled(Button)`
     &.MuiButton-root,.MuiButton-contained, .MuiButtonBase-root {
         border-radius: 8px;
-        text-transform: capitalize;
     }
 `;
 

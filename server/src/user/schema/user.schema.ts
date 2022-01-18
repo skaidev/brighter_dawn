@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
+import { AuthDocument } from 'src/auth/schema/auth.schema';
 
 export type UserDocument = Document & User;
 
@@ -21,14 +22,8 @@ export class User {
   phone: string;
   @Prop()
   role: string;
-  @Prop()
-  google_id: string;
-  @Prop()
-  username: string;
-  @Prop()
-  emailToken: string;
-  @Prop({ type: Boolean, default: false })
-  isActive: boolean;
+  @Prop({ type: Types.ObjectId, ref: 'Auth', autopopulate: true })
+  authData: AuthDocument;
   @Prop()
   image: string;
   @Prop()

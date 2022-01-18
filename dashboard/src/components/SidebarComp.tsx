@@ -1,73 +1,36 @@
 import React from "react";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
 
 const SidebarComp = () => {
-  return (
-    <Aside className="main-aside ">
-      <ul className="nav flex-column ">
-        <li className="nav-item">
-          <a className="nav-link" href="/">
-            <div className="nav-link_icon">
-              <i className="fas fa-home"></i>
-            </div>
-            <div className="nav-link_text">Dashboard</div>
-          </a>
-        </li>
-        <li className="nav-item ">
-          <NavLink activeClassName="active" to="/attendance">
-            <a className="nav-link">
-              <div className="nav-link_icon">
-                <i className="fas fa-calendar"></i>
-              </div>
-              <div className="nav-link_text">Attendance</div>
-            </a>
-          </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink activeClassName="active" to="/messages">
-            <a className="nav-link">
-              <div className="nav-link_icon">
-                <i className="fas fa-comment"></i>
-              </div>
-              <div className="nav-link_text">Messages</div>
-            </a>
-          </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink activeClassName="active" to="/profile">
-            <a className="nav-link">
-              <div className="nav-link_icon">
-                <i className="fas fa-address-card"></i>
-              </div>
-              <div className="nav-link_text">Profile</div>
-            </a>
-          </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink activeClassName="active" to="/student">
-            <a className="nav-link">
-              <div className="nav-link_icon">
-                <i className=" fas fa-user-graduate"></i>
-              </div>
-              <div className="nav-link_text">Students</div>
-            </a>
-          </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink activeClassName="active" to="/staff">
-            <a className="nav-link">
-              <div className="nav-link_icon">
-                <i className=" fas fa-id-badge"></i>
-              </div>
-              <div className="nav-link_text">Staff</div>
-            </a>
-          </NavLink>
-        </li>
-      </ul>
-    </Aside>
-  );
+	const router = useHistory();
+	return (
+		<Aside className="main-aside ">
+			<ul className="nav flex-column ">
+				{navLinks.map(({ to, name, icon }, i) => (
+					<li className="nav-item" key={i}>
+						<NavLink activeClassName="active" to={to}>
+							<a className="nav-link">
+								<div className="nav-link_icon">
+									<i className={`fas ${icon}`}></i>
+								</div>
+								<div className="nav-link_text">{name}</div>
+							</a>
+						</NavLink>
+					</li>
+				))}
+			</ul>
+		</Aside>
+	);
 };
 
 export default SidebarComp;
 const Aside = styled.aside``;
+
+const navLinks = [
+	{ name: "Dashboard", to: "/#", icon: "fa-home" },
+	{ name: "Students", to: "/students", icon: "fa-user-graduate" },
+	{ name: "Attendance", to: "/attendance", icon: "fa-calendar" },
+	{ name: "Messages", to: "/messages", icon: "fa-comment" },
+	{ name: "Profile", to: "/profile", icon: "fa-address-card" },
+];

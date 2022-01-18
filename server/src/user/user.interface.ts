@@ -9,3 +9,12 @@ export enum UserAccountTypeEnum {
   User = 'User',
   Supplier = 'Supplier',
 }
+
+export enum UserProfileTypeEnum {
+  Teacher = 'Teacher',
+  Student = 'Student',
+  Admin = 'Admin',
+  User = 'User',
+  Guest = 'Guest',
+  Parent = 'Parent',
+}

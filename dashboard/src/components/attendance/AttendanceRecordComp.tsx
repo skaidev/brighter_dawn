@@ -91,7 +91,7 @@ const AttendanceRecordComp = () => {
         >
           print
         </ButtonCompTwo>
-        <ButtonCompTwo variant="contained">add students</ButtonCompTwo>
+        <ButtonCompTwo variant="contained">next</ButtonCompTwo>
       </Grid>
     </Wrapper>
   );

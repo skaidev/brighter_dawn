@@ -5,6 +5,9 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { InviteUserDTO } from 'src/auth/auth.dto';
+import { config } from 'src/utils';
+import { sendgrid } from 'src/utils/sendgrid';
 import { User, UserDocument } from './schema/user.schema';
 
 @Injectable()
@@ -14,12 +17,28 @@ export class UserService {
   ) {}
   // create a user
   async createUser(data: UserDocument): Promise<UserDocument> {
-    const { password, email } = data;
-    if (!password || !email)
-      throw new BadRequestException('Email and password is required');
+    const { email } = data;
+    if (!email) throw new BadRequestException('Email is required');
     try {
       const user = await this.userModel.create(data);
       return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async inviteUser(data: InviteUserDTO) {
+    try {
+      const user = await this.userModel.findById(data.userId);
+      if (!user) throw new NotFoundException('User record not found');
+      await sendgrid.sendMail({
+        email: user.email,
+        subject: 'Create your profile',
+        html: `
+        <h1>Hello ${user?.firstName}</h1>
+        <p>Click <a href='${config.CLIENT_URL}/account?userId=${user.id}&profileType=${data.profileType}'>here</a> to create your profile on BDMIS Portal </p>
+        `,
+      });
     } catch (error) {
       throw error;
     }

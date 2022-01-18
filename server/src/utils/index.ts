@@ -14,6 +14,7 @@ export const config = {
   REDIS_HOST: process.env.REDIS_HOST || 'redis',
   REDIS_PORT: process.env.REDIS_PORT || 6378,
   SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+  SENDGRID_API_KEY_ID: process.env.SENDGRID_API_KEY_ID,
   CLIENT_URL:
     process.env.CLIENT_URL || process.env.NODE_ENV === 'production'
       ? 'https://bdmis.com'
@@ -28,7 +29,7 @@ export const config = {
       ? process.env.MONGO_INITDB_ROOT_PASSWORD
       : '',
   MAIL_SENDER: {
-    email: 'pin4eva@gmail.com',
+    email: 'info.bdmis@gmail.com',
     name: 'Brighter Dawn Montessori School',
   },
 };

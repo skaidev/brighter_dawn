@@ -3,16 +3,13 @@ import {
   Container,
   Box,
   Typography,
-  FormControl,
-  InputLabel,
-  MenuItem,
 } from "@mui/material";
 import { CalendarTodayOutlined } from "@mui/icons-material";
 import styled from "styled-components";
 import AttendanceCard from "components/attendance/AttendanceCard";
 import AttendanceRecordComp from "components/attendance/AttendanceRecordComp";
 import SelectInputComp from "components/attendance/SelectInputComp";
-import { InputComp, SelectComp } from "lib/InputComp";
+import { InputComp } from "lib/InputComp";
 
 const ViewAttend = () => {
   return (
@@ -22,14 +19,7 @@ const ViewAttend = () => {
           <p>Smart Lists:</p>
           <div className="view-record-mid d-flex flex-lg-row justify-content-lg-center flex-column">
             <div className=" flex-grow-1 p-0">
-              <FormControl fullWidth>
-                <InputLabel>Everyone</InputLabel>
-                <SelectComp>
-                  <MenuItem>Obe Sampson</MenuItem>
-                  <MenuItem>Obe Sampson</MenuItem>
-                  <MenuItem>Obe Sampson</MenuItem>
-                </SelectComp>
-              </FormControl>
+              <SelectInputComp />
             </div>
             <div className=" flex-grow-2">
               <InputComp
@@ -46,9 +36,7 @@ const ViewAttend = () => {
             </div>
           </div>
         </Box>
-        <Typography className="mt-5 mb-3 fw-500 fs-24">
-          Student Attendance Record
-        </Typography>
+        <Typography className="mt-5 mb-3 fw-500 fs-24">Student Attendance Record</Typography>
         <AttendanceRecordComp />
       </Container>
     </Wrapper>
@@ -61,7 +49,7 @@ const Wrapper = styled.div`
   .view-record {
     &-mid {
       .form {
-        padding: 0 !important;
+        padding: 0!important;
       }
     }
   }
