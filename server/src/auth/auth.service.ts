@@ -35,29 +35,74 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async register(data: Partial<AuthDocument>): Promise<AuthDocument> {
-    const { password, email } = data;
+  async getAuthUsers(): Promise<AuthDocument[]> {
+    try {
+      const users = await this.authModel.find();
+      return users;
+    } catch (error) {
+      throw error;
+    }
+  }
 
-    let user = await this.authModel.findOne({ email });
-    if (user)
+  async register(data: Partial<AuthDocument>): Promise<UserDocument> {
+    const { password, profile } = data;
+
+    if (!profile) throw new BadRequestException('Add profile id');
+    const user = await this.userModel.findById(profile).catch((err) => {
+      throw new Error(err);
+    });
+    if (!user) throw new NotFoundException('Invalid user');
+    const authUser = await this.authModel.findOne({ email: user.email });
+    if (authUser)
       throw new BadRequestException('Email aleady exist, sigin instead');
     const payload: Partial<AuthDocument> = {
-      ...data,
       password: bcrypt.hashSync(password, 10),
-      emailToken: (Math.floor(Math.random() * 90000) + 10000).toString(),
+      profile,
+      email: user.email,
     };
+
     try {
       await sendgrid.sendMail({
-        subject: 'Please verify your email',
-        html: ` <strong style="display:block">Hi!</strong>
+        subject: 'Profile created',
+        html: ` <strong style="display:block">Hi ${user?.firstName}!</strong>
   
-        <p>Please complete your registration by verifying your email address with this token</p>
+        <p>profile has been created sucessfully</p>
   
-        <h5>${payload?.emailToken}</h5>`,
+        `,
         email: payload.email,
       });
-      user = await this.authModel.create(payload);
+      await this.authModel.create(payload).catch((err) => {
+        throw err;
+      });
       return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async login(data: {
+    email: string;
+    password: string;
+  }): Promise<AuthResponseData> {
+    try {
+      const authData = await this.authModel.findOne({ email: data.email });
+      if (!authData) throw new NotFoundException('You are not yet registered');
+      const isMatch = bcrypt.compareSync(data.password, authData.password);
+      if (!isMatch)
+        throw new UnauthorizedException('Email or password not correct');
+      const { isActive } = authData;
+      const user = await this.userModel.findById(authData.profile);
+
+      if (user) {
+        this.req.user = user;
+        const token = `Bearer ${this.jwtService.sign(user.id)}`;
+        return {
+          id: user.id,
+          isActive,
+          token,
+        };
+      } else {
+        return { id: null, isActive, token: null, authId: authData.id };
+      }
     } catch (error) {
       throw error;
     }
@@ -107,35 +152,6 @@ export class AuthService {
     }
   }
 
-  async login(data: {
-    email: string;
-    password: string;
-  }): Promise<AuthResponseData> {
-    try {
-      const authData = await this.authModel.findOne({ email: data.email });
-      if (!authData) throw new NotFoundException('You are not yet registered');
-      const isMatch = bcrypt.compareSync(data.password, authData.password);
-      if (!isMatch)
-        throw new UnauthorizedException('Email or password not correct');
-      const { isActive } = authData;
-      const user = await this.userModel.findOne({ authData: authData.id });
-
-      if (user) {
-        this.req.user = user;
-        const token = `Bearer ${this.jwtService.sign(user.id)}`;
-        return {
-          id: user.id,
-          isActive,
-          token,
-        };
-      } else {
-        return { id: null, isActive, token: null, authId: authData.id };
-      }
-    } catch (error) {
-      throw error;
-    }
-  }
-
   // async loginWithGoogle(
   //   data: UserDocument,
   // ): Promise<{ user: Partial<UserDocument>; token: string }> {
@@ -163,21 +179,21 @@ export class AuthService {
   //     throw error;
   //   }
   // }
-  // async getMe(): Promise<UserDocument> {
-  //   const user = this.req.user;
-  //   try {
-  //     await this.userModel.updateOne(
-  //       { _id: user.id },
-  //       {
-  //         $set: { lastSeen: new Date() },
-  //       },
-  //     );
-  //     // const user = await this.userModel.findById(id).select('-password');
-  //     return user;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
+  async getMe(): Promise<UserDocument> {
+    const user = this.req.user;
+    try {
+      await this.userModel.updateOne(
+        { _id: user.id },
+        {
+          $set: { lastSeen: new Date() },
+        },
+      );
+      // const user = await this.userModel.findById(id).select('-password');
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
   // async forgotPassword(email: string): Promise<UserDocument> {
   //   const user = await this.userModel.findOne({ email }).select('-password');
   //   if (!user) throw new NotFoundException('No record found');

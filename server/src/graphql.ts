@@ -21,9 +21,14 @@ export interface SignupInput {
 }
 
 export interface UserInput {
+    id?: Nullable<string>;
     name?: Nullable<string>;
+    firstName?: Nullable<string>;
+    lastName?: Nullable<string>;
     email?: Nullable<string>;
-    password?: Nullable<string>;
+    role?: Nullable<string>;
+    accountType?: Nullable<string>;
+    phone?: Nullable<string>;
 }
 
 export interface Auth {
@@ -49,13 +54,13 @@ export interface IQuery {
     me(): Nullable<User> | Promise<Nullable<User>>;
     verifyToken(token?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
     verifyToChangePassword(id?: Nullable<string>, token?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
+    getAuthUsers(): Nullable<Nullable<Auth>[]> | Promise<Nullable<Nullable<Auth>[]>>;
     getUsers(): Nullable<Nullable<User>[]> | Promise<Nullable<Nullable<User>[]>>;
     getUser(id?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
 }
 
 export interface IMutation {
-    createUser(input?: Nullable<UserInput>): Nullable<Auth> | Promise<Nullable<Auth>>;
-    signup(input?: Nullable<SignupInput>): Nullable<Auth> | Promise<Nullable<Auth>>;
+    signup(input?: Nullable<SignupInput>): Nullable<User> | Promise<Nullable<User>>;
     login(email?: Nullable<string>, password?: Nullable<string>): Nullable<LoginResponse> | Promise<Nullable<LoginResponse>>;
     verifyToken(token?: Nullable<string>): Nullable<Auth> | Promise<Nullable<Auth>>;
     verifyOTP(otp?: Nullable<number>): Nullable<User> | Promise<Nullable<User>>;
@@ -76,6 +81,7 @@ export interface IMutation {
     changeRole(id?: Nullable<string>, role?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
     changeAccountType(id?: Nullable<string>, accountType?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
     deleteAllUsers(): Nullable<Nullable<User>[]> | Promise<Nullable<Nullable<User>[]>>;
+    createUser(input?: Nullable<UserInput>): Nullable<User> | Promise<Nullable<User>>;
 }
 
 export interface User {
@@ -84,14 +90,11 @@ export interface User {
     firstName?: Nullable<string>;
     lastName?: Nullable<string>;
     google_id?: Nullable<string>;
-    visibility?: Nullable<boolean>;
     isActive?: Nullable<boolean>;
-    customers?: Nullable<Nullable<User>[]>;
     email?: Nullable<string>;
     emailToken?: Nullable<string>;
     role?: Nullable<string>;
-    accountType?: Nullable<string>;
-    connections?: Nullable<Nullable<User>[]>;
+    accountType?: Nullable<Nullable<string>[]>;
     lastSeen?: Nullable<Date>;
     image?: Nullable<string>;
     state?: Nullable<string>;

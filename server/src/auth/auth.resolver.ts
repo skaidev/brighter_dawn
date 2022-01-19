@@ -8,11 +8,15 @@ import { AuthDocument } from './schema/auth.schema';
 @Resolver('Auth')
 export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
-  // @UseGuards(GQLGuard)
-  // @Query()
-  // me(@CurrentUser() user: UserDocument) {
-  //   return user;
-  // }
+  @UseGuards(GQLGuard)
+  @Query()
+  me(@CurrentUser() user: UserDocument) {
+    return user;
+  }
+  @Query()
+  getAuthUsers() {
+    return this.authService.getAuthUsers();
+  }
   @Mutation()
   verifyToken(@Args('token') token: string) {
     return this.authService.verifyToken(token);

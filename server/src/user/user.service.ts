@@ -9,6 +9,7 @@ import { InviteUserDTO } from 'src/auth/auth.dto';
 import { config } from 'src/utils';
 import { sendgrid } from 'src/utils/sendgrid';
 import { User, UserDocument } from './schema/user.schema';
+import { UserProfileTypeEnum } from './user.interface';
 
 @Injectable()
 export class UserService {
@@ -17,10 +18,24 @@ export class UserService {
   ) {}
   // create a user
   async createUser(data: UserDocument): Promise<UserDocument> {
-    const { email } = data;
+    const { email, accountType } = data;
     if (!email) throw new BadRequestException('Email is required');
+    let user = await this.userModel.findOne({ email });
+    if (user) throw new BadRequestException('Email is already registered');
     try {
-      const user = await this.userModel.create(data);
+      user = await this.userModel.create({
+        ...data,
+        email,
+        accountType: accountType || UserProfileTypeEnum.Teacher,
+      });
+      await sendgrid.sendMail({
+        email: user.email,
+        subject: 'Create your profile',
+        html: `
+        <h1>Hello ${user?.firstName}</h1>
+        <p>Click <a href='${config.CLIENT_URL}/account?userId=${user.id}&profileType=${user?.accountType?.[0]}'>here</a> to create your profile on BDMIS Portal </p>
+        `,
+      });
       return user;
     } catch (error) {
       throw error;

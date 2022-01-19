@@ -6,9 +6,11 @@ import { config } from '../utils';
 import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
 import { Auth, AuthSchema } from './schema/auth.schema';
+import { AuthController } from './auth.controller';
+import { JwtStrategy } from 'src/strategies/jwt.strategy';
 
 @Module({
-  providers: [AuthResolver, AuthService],
+  providers: [AuthResolver, AuthService, JwtStrategy],
   imports: [
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
@@ -19,5 +21,6 @@ import { Auth, AuthSchema } from './schema/auth.schema';
     }),
     CacheModule.register(),
   ],
+  controllers: [AuthController],
 })
 export class AuthModule {}

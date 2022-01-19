@@ -23,11 +23,11 @@ type Query {
   me: User
   verifyToken(token: String): User
   verifyToChangePassword(id: ID, token: String): User
+  getAuthUsers: [Auth]
 }
 
 type Mutation {
-  createUser(input: UserInput): Auth
-  signup(input: SignupInput): Auth
+  signup(input: SignupInput): User
   login(email: String, password: String): LoginResponse
   verifyToken(token: String): Auth
   verifyOTP(otp: Int): User

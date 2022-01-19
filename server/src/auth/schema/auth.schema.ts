@@ -20,7 +20,7 @@ export class Auth {
   username: string;
   @Prop()
   emailToken: string;
-  @Prop({ type: Boolean, default: false })
+  @Prop({ type: Boolean, default: true })
   isActive: boolean;
   @Prop({ type: Types.ObjectId, ref: 'User' })
   profile: UserDocument;
