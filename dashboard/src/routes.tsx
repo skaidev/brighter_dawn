@@ -1,4 +1,5 @@
 import AttendanceLayout from "layouts/AttendanceLayout";
+import AuthLayout from "layouts/AuthLayout";
 import MessageLayout from "layouts/MessageLayout";
 import ProfileLayout from "layouts/ProfileLayout";
 import StudentLayout from "layouts/StudentLayout";
@@ -76,7 +77,7 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				proctected={false}
 				path="/login"
 				component={LoginPage}
-				layout={DashboardLayout}
+				layout={AuthLayout}
 				isAuth={false}
 			/>
 			<AppRoutes
@@ -116,7 +117,14 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 			/>
 			<AppRoutes
 				proctected={false}
-				path="/students/**"
+				path="/students"
+				component={StudentsPage}
+				layout={StudentLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/students/:id"
 				component={StudentsPage}
 				layout={StudentLayout}
 				isAuth={false}

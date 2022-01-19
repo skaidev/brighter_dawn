@@ -1,16 +1,14 @@
-import { MenuItem } from "@mui/material";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import React from "react";
-import { SelectComp } from "../lib/InputComp";
 
 const HomePage = () => {
 	return (
-		<div>
-			<SelectComp fullWidth>
-				<MenuItem>Item 1</MenuItem>
-				<MenuItem>Item 2</MenuItem>
-				<MenuItem>Item 3</MenuItem>
-			</SelectComp>
-		</div>
+		<Container sx={{ mt: 3 }}>
+			<Typography variant="h5" align="center">
+				Home
+			</Typography>
+		</Container>
 	);
 };
 
