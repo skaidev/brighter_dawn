@@ -18,62 +18,56 @@ import styled from "styled-components";
 
 const LogInfoPage = () => {
   return (
-    <Wrapper>
-      <Container className="login">
-        <Box className="login-sect">
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableRow className="login-sect-top">
-                  <TableCellComp className="p">Account</TableCellComp>
-                  <TableCellComp className="p">Login</TableCellComp>
-                  <TableCellComp className="p">Password</TableCellComp>
-                  <TableCellComp className="p">Lock</TableCellComp>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCellCompTwo>Family 1:</TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <TextIputBase fullWidth />
-                  </TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <TextIputBase fullWidth />
-                  </TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <Lock />
-                  </TableCellCompTwo>
-                </TableRow>
-                <TableRow>
-                  <TableCellCompTwo>Student:</TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <TextIputBase fullWidth />
-                  </TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <TextIputBase fullWidth />
-                  </TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <Lock />
-                  </TableCellCompTwo>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
+    <Wrapper className="login">
+      <Box className="login-sect">
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow className="login-sect-top">
+                <TableCellComp className="p">Account</TableCellComp>
+                <TableCellComp className="p">Login</TableCellComp>
+                <TableCellComp className="p">Password</TableCellComp>
+                <TableCellComp className="p">Lock</TableCellComp>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCellCompTwo>Family 1:</TableCellCompTwo>
+                <TableCellCompTwo>
+                  <TextIputBase fullWidth />
+                </TableCellCompTwo>
+                <TableCellCompTwo>
+                  <TextIputBase fullWidth />
+                </TableCellCompTwo>
+                <TableCellCompTwo>
+                  <Lock />
+                </TableCellCompTwo>
+              </TableRow>
+              <TableRow>
+                <TableCellCompTwo>Student:</TableCellCompTwo>
+                <TableCellCompTwo>
+                  <TextIputBase fullWidth />
+                </TableCellCompTwo>
+                <TableCellCompTwo>
+                  <TextIputBase fullWidth />
+                </TableCellCompTwo>
+                <TableCellCompTwo>
+                  <Lock />
+                </TableCellCompTwo>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
 
-          <Grid
-            container
-            justifyContent="flex-end"
-            className="login-sect-bottom"
-          >
-            <ButtonComp variant="contained" className="text-capitalize me-4">
-              Save Changes
-            </ButtonComp>
-            <ButtonComp variant="outlined" className=" text-capitalize">
-              cancel
-            </ButtonComp>
-          </Grid>
-        </Box>
-      </Container>
+        <Grid container justifyContent="flex-end" className="login-sect-bottom">
+          <ButtonComp variant="contained" className="text-capitalize me-4">
+            Save Changes
+          </ButtonComp>
+          <ButtonComp variant="outlined" className=" text-capitalize">
+            cancel
+          </ButtonComp>
+        </Grid>
+      </Box>
     </Wrapper>
   );
 };
