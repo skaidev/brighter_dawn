@@ -19,143 +19,150 @@ const FacilitiesPage = () => {
           <HeaderComp />
         </div>
         <section className='container'>
-          <div className='science  mt-5'>
-            <h5 className='josefin fs-36 fw-400 text-capitalize'>
-              science laboratory center
-            </h5>
-            <div className='girl-text d-flex'>
-              <img className='img-fluid' src='/images/Group_9899.png' alt='' />
-              <div className='text-content'>
-                <p className='fw-light fs-18'>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut .Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  .Lorem ipsum t”
-                </p>
-              </div>
+          <div className='building d-flex same-style'>
+            <img src='/images/BDMIS building jpg-01 (1) 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+                brighter dawn facilities
+              </p>
+              <p className='fw-light fs-14'>
+                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
+                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
+                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
+                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
+                ut .Lorem
+              </p>
             </div>
           </div>
-          <div className='science-image '>
-            <img
-              src='/images/pexels-tima-miroshnichenko-5452201 1.png'
-              alt=''
-            />
-            <img src='/images/pexels-rfstudio-3825379 1.png' alt='' />
-            <img src='/images/pexels-chokniti-khongchum-2280549 1.png' alt='' />
-            <img src='/images/pexels-rfstudio-3825541 1.png' alt='' />
-          </div>
-        </section>
 
-        <section className='container'>
-          <div className='sports'>
-            <h5 className='josefin fs-36 fw-400 text-capitalize'>
-              sport and physical center
-            </h5>
-            <div className='sports-wrapper d-flex '>
-              <div className='boy-text '>
-                <img className='img-fluid' src='/images/Frame_9973.png' alt='' />
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut .Lorem tempor incididunt ut labore et
-                  exercitation ullamco laboris nisi ut. Loremipsum t”
-                </p>
-              </div>
-              <div className='b-wrapper d-flex'>
-                <div className='swim'>
-                  <img
-                    className='mb-3 '
-                    src='/images/kids_swimming_1.png'
-                    alt=''
-                  />
-                  <img
-                    className=''
-                    src='/images/girl_holding_ball_1.png'
-                    alt=''
-                  />
-                </div>
-                <div className='basketball'>
-                  <img className='mb-3 ' src='/images/football_1.png' alt='' />
-                  <img className='' src='/images/basket_court_1.png' alt='' />
-                </div>
-              </div>
+          <div className='library d-flex same-style'>
+            <img src='/images/library jpg-01 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+                Our Library Facility comes with modern Curriculum{" "}
+              </p>
+              <p className='fw-light fs-14'>
+                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
+                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
+                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem
+              </p>
             </div>
           </div>
-        </section>
 
-        <section className='container'>
-          <div className='computer  mt-5'>
-            <h5 className='josefin fs-36 fw-400 text-capitalize'>
-              information communication technology
-            </h5>
-            <div className='girl-text d-flex'>
-              <img className='img-fluid' src='/images/Frame 9951.png' alt='' />
-              <div className='text-content'>
-                <p className='fw-light fs-18'>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut .Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  .Lorem ipsum t”
-                </p>
-              </div>
+          <div className='information container'>
+            <p className='text-capitalize fs-24 fw-400 mb-4 success'> Our Information Technology center (IT) for our pupil</p>
+            <img src='/images/Frame 10067.png' alt='' />
+            <p className='fw-light fs-14 text-content text-center'>
+              ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud  exercitation ullamco
+              laboris nisi ut .Lorem psum t” veniam, quis nostrud exercitation
+              ullamco laboris nisi ut .Lorem psum tsum t” veniam, quis nostrud
+              exercitation ullamco laboris nisi ut. Lorem ipsum t” ipsum t
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              .Lorem ipsum t” veniam, quis nostrud exercitation ullamco laboris
+              nisi ut .Lorem
+            </p>
+          </div>
+           
+          <div className='playground d-flex same-style'>
+            <img src='/images/playground jpg-01 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+              Children Playground to have an awesome fun time 
+              </p>
+              <p className='fw-light fs-14'>
+                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
+                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
+                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
+                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
+                ut .Lorem
+              </p>
             </div>
           </div>
-          <div className='computer-image '>
-            <img
-              src='/images/4535496-interior-of-classroom-with-computers 1.png'
-              alt=''
-            />
-            <img src='/images/fixing_computer_1.png' alt='' />
-            <img src='/images/classroom-projector-screen 1.png' alt='' />
-            <img
-              src='/images/360_F_269246962_HqzYSUKPdFWYFnvTBhrkhFBADwrIl2ds 1.png'
-              alt=''
-            />
-          </div>
-        </section>
 
-        <section className='container'>
-          <div className='food'>
-            <h5 className='josefin fs-36 fw-400 text-capitalize'>
-              sport and physical center
-            </h5>
-
-            <div className='food-wrapper d-flex '>
-              <div className='boy-text '>
-                <img className='img-fluid' src='/images/Frame_9962.png' alt='' />
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut .Lorem tempor incididunt ut labore et
-                  exercitation ullamco laboris nisi ut. Loremipsum t”
-                </p>
-              </div>
-              <div className='b-wrapper'>
-                <div className="top">
-                    <img className='' src="/images/cooook 1 (1).png" alt="" />
-                    <img className='' src="/images/kitche_1.png" alt="" />
-                </div>
-                <div className="bottom mt-3">
-                    <img className='' src="/images/kitchen_1.png" alt="" />
-                </div>
-                
-              </div>
+          <div className='hall d-flex same-style'>
+            <img src='/images/multi purpose hall jpg-01 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+              Our muiti-purpose hall for extra curriculum activities
+              </p>
+              <p className='fw-light fs-14'>
+                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
+                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
+                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
+                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
+                ut .Lorem
+              </p>
             </div>
           </div>
+
+          <div className='science d-flex same-style'>
+            <img src='/images/pupils in the science lab jpg-01 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+              Science laboratory
+              </p>
+              <p className='fw-light fs-14'>
+                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
+                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
+                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
+                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
+                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
+                ut .Lorem
+              </p>
+            </div>
+          </div>
+
         </section>
 
         <section className='container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0'>
