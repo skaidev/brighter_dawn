@@ -1,39 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const SidebarComp = () => {
+	// const router = useHistory();
 	return (
 		<Aside className="main-aside ">
 			<ul className="nav flex-column ">
-				<li className="nav-item">
-					<a className="nav-link" href="/">
-						<div className="nav-link_icon">
-							<i className="fas fa-home"></i>
-						</div>
-						<div className="nav-link_text">Dashboard</div>
-					</a>
-				</li>
-				<li className="nav-item ">
-					<Link to="/attendance">
-					<a className="nav-link active">
-						<div className="nav-link_icon">
-							<i className="fas fa-calendar"></i>
-						</div>
-						<div className="nav-link_text">Attendance</div>
-					</a>
-					</Link>
-				</li>
-				<li className="nav-item ">
-					<Link to="/messages">
-					<a className="nav-link active">
-						<div className="nav-link_icon">
-							<i className="fas fa-comment"></i>
-						</div>
-						<div className="nav-link_text">Messages</div>
-					</a>
-					</Link>
-				</li>
+				{navLinks.map(({ to, name, icon }, i) => (
+					<li className="nav-item" key={i}>
+						<NavLink activeClassName="active nav-link" to={to}>
+							<div className="nav-link_icon">
+								<i className={`fas ${icon}`}></i>
+							</div>
+							<div className="nav-link_text">{name}</div>
+						</NavLink>
+					</li>
+				))}
 			</ul>
 		</Aside>
 	);
@@ -41,3 +24,11 @@ const SidebarComp = () => {
 
 export default SidebarComp;
 const Aside = styled.aside``;
+
+const navLinks = [
+	{ name: "Dashboard", to: "/#", icon: "fa-home" },
+	{ name: "Students", to: "/students", icon: "fa-user-graduate" },
+	// { name: "Attendance", to: "/attendance", icon: "fa-calendar" },
+	// { name: "Messages", to: "/messages", icon: "fa-comment" },
+	{ name: "Profile", to: "/profile", icon: "fa-address-card" },
+];

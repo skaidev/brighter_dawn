@@ -431,7 +431,7 @@ const StepFour = () => {
 
   return (
     <form>
-      <h3 className='mb-5'>Child's Health Information</h3>
+      <h3 className='mb-5'>{"Child's"} Health Information</h3>
       <div className=' row mb-3'>
         <div className='form-group col-md-6'>
           <label>
@@ -488,17 +488,17 @@ const StepFour = () => {
       </div>
       <div className=' row mb-3'>
         <div className='form-group col-md-6'>
-          <label>Doctor's Email</label>
+          <label>{"Doctor's"} Email</label>
           <input type='email' className='form-control' />
           <span className='text-danger'>
-            <small>please fill in doctor's email</small>
+            <small>please fill in {"doctor's"} email</small>
           </span>
         </div>
         <div className='form-group col-md-6'>
-          <label>Doctor's Telephone Number</label>
+          <label>{"Doctor's"} Telephone Number</label>
           <input type='number' className='form-control' />
           <span className='text-danger'>
-            <small>please fill in doctor's number</small>
+            <small>please fill in {"doctor's"} number</small>
           </span>
         </div>
       </div>
@@ -558,7 +558,7 @@ const StepFour = () => {
             <option value='others'>Others</option>
           </select>
           <span className='text-danger'>
-            <small>please select child's health condition</small>
+            <small>please select {"child's"} health condition</small>
           </span>
         </div>
       </div>

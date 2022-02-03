@@ -1,37 +1,37 @@
 import { createTheme } from "@mui/material/styles";
 
-export  interface IColors {
-	primary:{
-		main: string,
-		light:string
-	},
+export interface IColors {
+	primary: {
+		main: string;
+		light: string;
+	};
 	success: {
-		main: string,
-		light:string
-	},
+		main: string;
+		light: string;
+	};
 	error: {
-		main: string,
-		light:string
-	},
+		main: string;
+		light: string;
+	};
 }
 
-const palette:IColors =  {
+const palette: IColors = {
 	primary: {
 		main: "#1271bb",
-		light: "#D6E9F7"
+		light: "#D6E9F7",
 	},
 	success: {
 		main: "#28a745",
-		light: ""
+		light: "",
 	},
 	error: {
 		main: "#ff0000",
-		light: ""
+		light: "",
 	},
-}
+};
 export const styledTheme = {
-	palette
-}
+	palette,
+};
 export const theme = createTheme({
 	palette,
 	typography: {
@@ -44,6 +44,7 @@ export const theme = createTheme({
 					paddingLeft: "4%",
 					paddingRight: "4%",
 					borderRadius: 0,
+					// boxShadow: "none"
 				},
 			},
 		},

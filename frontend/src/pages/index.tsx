@@ -89,9 +89,13 @@ const HomePage = () => {
                     </div>
                     <div className='dam josefin'>
                       <p className='dam mt-4 fs-18 fw-bold josefin'>
-                        Madam Damati{" "}
+                        Mrs Florence Adokiye Amiesimaka 
+                        <p className='fs-14 fw-lighter '>B.A (Hons),
+                        PGDIpEd, LLB (Hons) BL, LLM</p>
                       </p>
-                      <p className='fs-18 fw-lighter '>Director, Brighter Dawn Schools </p>
+                      <p className='fs-18 fw-lighter '>
+                        Director, Brighter Dawn Schools{" "}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -184,12 +188,12 @@ const HomePage = () => {
             <div className='facilities d-flex '>
               <div className='four-img  d-flex flex-column '>
                 <div className='top  mb-5 d-flex justify-content-between'>
-                  <img src='/images/kid comp 1.png' alt='' />
-                  <img src='/images/sc_1.png' alt='' />
+                  <img src='/images/pupils in IT lab jpg-01 1.png' alt='' />
+                  <img src='/images/pupils in the science lab jpg-01 1.png' alt='' />
                 </div>
                 <div className='bottom d-flex justify-content-between'>
-                  <img src='/images/cooook_1.png' alt='' />
-                  <img src='/images/football_2_1.png' alt='' />
+                  <img src='/images/playground jpg-01 1.png' alt='' />
+                  <img src='/images/library jpg-01 1.png' alt='' />
                 </div>
               </div>
 
@@ -239,10 +243,12 @@ const HomePage = () => {
               </p>
               <div className='admission-sect-two'>
                 <div className='admission-sect-two-item'>
-                  <p> Creche/ Playgroup</p>
+                  <p> Creche</p>
                   <p>Kindergaten</p>
+                  <p>Pre-school</p>
                 </div>
                 <div className='admission-sect-two-item'>
+                  <p>Nursery</p>
                   <p>Basic 1-6</p>
                   <p>After School Care</p>
                 </div>
@@ -497,11 +503,11 @@ const activities = [
   },
 
   {
-    title: "music classes",
+    title: "music club",
   },
 
   {
-    title: "ballet classes",
+    title: "ballet club",
   },
 
   {
@@ -509,17 +515,14 @@ const activities = [
   },
 
   {
-    title: "coding classes",
+    title: "coding club",
   },
 
   {
-    title: "karate classes",
+    title: "arts and craft",
   },
   {
-    title: "fine art",
-  },
-  {
-    title: "needle work and crochet",
+    title: "abacus club",
   },
 ];
 

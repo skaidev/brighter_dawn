@@ -1,18 +1,24 @@
+import AttendanceLayout from "layouts/AttendanceLayout";
+import AuthLayout from "layouts/AuthLayout";
+import MessageLayout from "layouts/MessageLayout";
+import ProfileLayout from "layouts/ProfileLayout";
+import StudentLayout from "layouts/StudentLayout";
+import TakeAttendComp from "pages/attendance";
+import ViewAttend from "pages/attendance/ViewAttend";
+import MessagesPage from "pages/messages";
+import SingleMessagePage from "pages/messages/[id]";
+import ProfilePage from "pages/profile";
+import StudentsPage from "pages/students";
+import React from "react";
 import {
 	BrowserRouter as Router,
+	Redirect,
 	Route,
 	Switch,
-	Redirect,
 } from "react-router-dom";
-import React from "react";
 import DashboardLayout from "./layouts/DashboardLayout";
 import HomePage from "./pages";
 import LoginPage from "./pages/login";
-import TakeAttendComp from "pages/attendance";
-import ViewAttend from "pages/attendance/ViewAttend";
-import AttendanceLayout from "layouts/AttendanceLayout";
-import MessagesPage from "pages/messages";
-import MessageLayout from "layouts/MessageLayout";
 
 interface IProp {
 	component: React.ElementType;
@@ -71,7 +77,7 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				proctected={false}
 				path="/login"
 				component={LoginPage}
-				layout={DashboardLayout}
+				layout={AuthLayout}
 				isAuth={false}
 			/>
 			<AppRoutes
@@ -93,6 +99,34 @@ const RouterComp = ({ isAuth }: { isAuth: boolean }): JSX.Element => (
 				path="/messages"
 				component={MessagesPage}
 				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/singlemessage"
+				component={SingleMessagePage}
+				layout={MessageLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/profile"
+				component={ProfilePage}
+				layout={ProfileLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/students"
+				component={StudentsPage}
+				layout={StudentLayout}
+				isAuth={false}
+			/>
+			<AppRoutes
+				proctected={false}
+				path="/students/:id"
+				component={StudentsPage}
+				layout={StudentLayout}
 				isAuth={false}
 			/>
 		</Switch>

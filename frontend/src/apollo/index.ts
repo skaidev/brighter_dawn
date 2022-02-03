@@ -18,6 +18,10 @@ let apolloClient: ApolloClient<any>;
 // }
 
 const uri = `${STRAPI_URI}/graphql`;
+const mainServerUri =
+	process.env.NODE_ENV === "production"
+		? "https://bdmis.org/api/v1/graphql"
+		: "http://localhost:8000/api/v1/graphql";
 
 export const apollo: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 	uri,
@@ -27,6 +31,12 @@ export const apollo: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 		Authorization: "Bearer " + jscookie.get(TOKEN_NAME) || " ",
 	},
 });
+
+export const apolloMainServer: ApolloClient<NormalizedCacheObject> =
+	new ApolloClient({
+		uri: mainServerUri,
+		cache: new InMemoryCache(),
+	});
 
 export const apolloStrapi: ApolloClient<NormalizedCacheObject> =
 	new ApolloClient({
