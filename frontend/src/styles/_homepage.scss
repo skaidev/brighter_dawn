@@ -288,7 +288,15 @@
     }
     
    .four-img{
-     width: 100%;
+     img{
+      max-width:300px ;
+      max-height: 300px;
+      // width: 100%;
+      @media screen and (max-width: 768px){
+       max-width: 100%;
+      }
+     }
+    //  width: 100%;
      
      
      .top{
