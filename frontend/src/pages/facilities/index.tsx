@@ -115,7 +115,7 @@ const FacilitiesPage = () => {
             <img src='/images/multi purpose hall jpg-01 1.png' alt='' />
             <div className='text-content'>
               <p className='text-capitalize fs-24 fw-400 success'>
-              Our muiti-purpose hall for extra curriculum activities
+              our muiti-purpose hall 
               </p>
               <p className='fw-light fs-14'>
                 ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut

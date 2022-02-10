@@ -288,6 +288,7 @@
     }
     
    .four-img{
+     
      img{
       max-width:300px ;
       max-height: 300px;
@@ -317,7 +318,8 @@
 
       .stuff{
         &-active{
-          padding: 0.125rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
           border: 1px solid $light_success;
           background-color: $light_success;
           border-radius: 5px;

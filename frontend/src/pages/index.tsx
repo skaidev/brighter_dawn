@@ -250,11 +250,10 @@ const HomePage = () => {
 							<div className="admission-sect-two">
 								<div className="admission-sect-two-item">
 									<p> Creche</p>
-									<p>Kindergaten</p>
 									<p>Pre-school</p>
+									<p>Nursery</p>
 								</div>
 								<div className="admission-sect-two-item">
-									<p>Nursery</p>
 									<p>Basic 1-6</p>
 									<p>After School Care</p>
 								</div>
@@ -519,7 +518,7 @@ const activities = [
 	},
 
 	{
-		title: "cultural display",
+		title: "literary club",
 	},
 
 	{
@@ -541,9 +540,10 @@ const properties = [
 	{
 		title: "Science Laboratory ",
 	},
-	{
-		title: "Food Processing ",
+  {
+		title: "Modern Library ",
 	},
+	
 	{
 		title: " Sport center",
 	},
