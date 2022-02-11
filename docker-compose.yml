@@ -22,7 +22,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3001:3001
-    command: yarn server -s build -l 3001
+    command: yarn serve -s build -l 3001
 
   cms:
     container_name: bdmis_cms
