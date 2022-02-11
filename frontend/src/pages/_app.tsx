@@ -10,7 +10,7 @@ import "styles/index.scss";
 import "styles/custom.scss";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 
 if (process.browser) {
 	require("bootstrap/dist/js/bootstrap");
@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				<meta name="yandex-verification" content="a57d2d540a5a65c6" />
 				<meta
 					name="keywords"
-					content="Primary school,nursery school, nursery and primary school , Coding club, ICT hall,Portharcourt school, Nigeria"
+					content="Primary school, nursery school, nursery and primary school , Coding club, ICT hall,Portharcourt school, Nigeria"
 				/>
 				<title>Brighter Dawn Montessori International School</title>
 				<meta
