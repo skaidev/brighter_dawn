@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
-import { FormControl, TextField } from "@mui/material";
+import { FormControl, Stack, TextField, Typography } from "@mui/material";
 import Container from "@mui/material/Container";
+import { Box } from "@mui/system";
 import { LOGIN } from "apollo/queries/auth.query";
 import Cookies from "js-cookie";
 import { ButtonComp } from "lib/ButtonComp";
@@ -29,6 +30,10 @@ const LoginPage = () => {
 		<Wrapper>
 			<Container>
 				<div className="inner">
+					<Typography variant="h4" mb={2} align="center">
+						{" "}
+						BDMIS Portal
+					</Typography>
 					<form onSubmit={handleSubmit}>
 						<FormControl fullWidth sx={{ mb: 2 }}>
 							<TextField
@@ -46,9 +51,11 @@ const LoginPage = () => {
 								required
 							/>
 						</FormControl>
-						<ButtonComp disabled={loading} type="submit" variant="contained">
-							{loading ? "Processing" : "Login"}
-						</ButtonComp>
+						<Stack>
+							<ButtonComp disabled={loading} type="submit" variant="contained">
+								{loading ? "Processing" : "Login"}
+							</ButtonComp>
+						</Stack>
 					</form>
 				</div>
 			</Container>
@@ -65,5 +72,8 @@ const Wrapper = styled.div`
 	justify-content: center;
 	.inner {
 		height: 80vh;
+		width: 100%;
+		max-width: 600px;
+		margin: auto;
 	}
 `;
