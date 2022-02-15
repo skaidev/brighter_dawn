@@ -21,131 +21,130 @@ import styled from "styled-components";
 
 const ContactCompPage = (): JSX.Element => {
   return (
-    <Wrapper>
-      <Container className="contact">
-        <div className="contact-head">
-          <Typography className="p">Contacts</Typography>
-        </div>
-        <TableContainer className="contact-mid">
-          <Table>
-            <TableHead>
-              <TableCellComp className="fw-bold">
-                Relationship/Name
+    <Wrapper className="contact">
+    <div className="contact-head">
+      <Typography className="p">Contacts</Typography>
+    </div>
+    <TableContainer className="contact-mid">
+      <Table>
+        <TableHead>
+          <TableCellComp className="fw-bold">Relationship/Name</TableCellComp>
+          <TableCellComp className="fw-bold">Role</TableCellComp>
+          <TableCellComp className="fw-bold">Phone Numbers</TableCellComp>
+          <TableCellComp className="fw-bold">Email Addresses</TableCellComp>
+        </TableHead>
+        <TableBody>
+          {contactItems.map((items, i) => (
+            <TableRow key={i}>
+              <TableCellComp>
+                {items.title} <br /> {items.name}
               </TableCellComp>
-              <TableCellComp className="fw-bold">Role</TableCellComp>
-              <TableCellComp className="fw-bold">Phone Numbers</TableCellComp>
-              <TableCellComp className="fw-bold">Email Addresses</TableCellComp>
-            </TableHead>
-            <TableBody>
-              {contactItems.map((items, i) => (
-                <TableRow key={i}>
-                  <TableCellComp>
-                    {items.title} <br /> {items.name}
-                  </TableCellComp>
-                  <TableCellComp>{items.role}</TableCellComp>
-                  <TableCellComp>{items.tel}</TableCellComp>
-                  <TableCellComp>{items.email}</TableCellComp>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              <TableCellComp>{items.role}</TableCellComp>
+              <TableCellComp>{items.tel}</TableCellComp>
+              <TableCellComp>{items.email}</TableCellComp>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
 
-        <Grid container>
-          <Grid item xs={6}>
-            <SingleContactForm />
-          </Grid>
-          <Grid item xs={6}>
-            <SingleContactForm />
-          </Grid>
-        </Grid>
+    <Grid container>
+      <Grid item xs={6}>
+        <SingleContactForm />
+      </Grid>
+      <Grid item xs={6}>
+        <SingleContactForm />
+      </Grid>
+    </Grid>
 
-        <Grid container>
-          <Grid item xs={6}>
-            <Box className="contact-mid1 left">
-              <TableContainer>
-                <Table>
-                  <TableBody>
-                    <TableRow>
-                      <TableCellCompTwo>Relationship:</TableCellCompTwo>
-                      <TableCellCompTwo>
-                        <TextIputBase fullWidth />
-                      </TableCellCompTwo>
-                    </TableRow>
-                    <TableRow>
-                      <TableCellCompTwo>Notes:</TableCellCompTwo>
-                      <TableCellCompTwo>
-                        <TextareaAutosize
-                          minRows={3}
-                          className=" form-control"
-                        />
-                      </TableCellCompTwo>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </Box>
-          </Grid>
-          <Grid item xs={6}>
-            <Box className="contact-mid1 right">
-              <TableContainer>
-                <Table>
-                  <TableBody>
-                    <TableRow>
-                      <TableCellCompTwo>
-                        Roles and permissions:
-                      </TableCellCompTwo>
-                      <TableCellCompTwo>
-                        <TextIputBase fullWidth />
-                      </TableCellCompTwo>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </Box>
-          </Grid>
-        </Grid>
-
-        <Grid container>
-          <Grid item xs={6}>
-            <TelFormCard />
-          </Grid>
-          <Grid item xs={6}>
-            <TelFormCard />
-          </Grid>
-        </Grid>
-        
-        <Grid container>
-          <Grid item xs={6}>
-          <Box className="contact-bottom">
+    <Grid container>
+      <Grid item xs={6}>
+        <Box className="contact-mid1 left">
           <TableContainer>
             <Table>
               <TableBody>
                 <TableRow>
-                <TableCellCompTwo className=" text-center p">Occupation</TableCellCompTwo>
-                <TableCellCompTwo className=" text-center p">Employer</TableCellCompTwo>
+                  <TableCellCompTwo>Relationship:</TableCellCompTwo>
+                  <TableCellCompTwo>
+                    <TextIputBase fullWidth />
+                  </TableCellCompTwo>
                 </TableRow>
                 <TableRow>
+                  <TableCellCompTwo>Notes:</TableCellCompTwo>
                   <TableCellCompTwo>
-                    <TextIputBase fullWidth/>
-                  </TableCellCompTwo>
-                  <TableCellCompTwo>
-                    <TextIputBase fullWidth/>
+                    <TextareaAutosize minRows={3} className=" form-control" />
                   </TableCellCompTwo>
                 </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
         </Box>
-          </Grid>
-        </Grid>
+      </Grid>
+      <Grid item xs={6}>
+        <Box className="contact-mid1 right">
+          <TableContainer>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCellCompTwo>Roles and permissions:</TableCellCompTwo>
+                  <TableCellCompTwo>
+                    <TextIputBase fullWidth />
+                  </TableCellCompTwo>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
+      </Grid>
+    </Grid>
 
-        <Grid container justifyContent="flex-end" className="contact-bottom1">
-          <ButtonComp variant="contained" className="text-capitalize me-4">Save Changes</ButtonComp>
-          <ButtonComp variant="outlined" className=" text-capitalize">cancel</ButtonComp>
-        </Grid>
-      </Container>
-    </Wrapper>
+    <Grid container>
+      <Grid item xs={6}>
+        <TelFormCard />
+      </Grid>
+      <Grid item xs={6}>
+        <TelFormCard />
+      </Grid>
+    </Grid>
+
+    <Grid container>
+      <Grid item xs={6}>
+        <Box className="contact-bottom">
+          <TableContainer>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCellCompTwo className=" text-center p">
+                    Occupation
+                  </TableCellCompTwo>
+                  <TableCellCompTwo className=" text-center p">
+                    Employer
+                  </TableCellCompTwo>
+                </TableRow>
+                <TableRow>
+                  <TableCellCompTwo>
+                    <TextIputBase fullWidth />
+                  </TableCellCompTwo>
+                  <TableCellCompTwo>
+                    <TextIputBase fullWidth />
+                  </TableCellCompTwo>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
+      </Grid>
+    </Grid>
+
+    <Grid container justifyContent="flex-end" className="contact-bottom1">
+      <ButtonComp variant="contained" className="text-capitalize me-4">
+        Save Changes
+      </ButtonComp>
+      <ButtonComp variant="outlined" className=" text-capitalize">
+        cancel
+      </ButtonComp>
+    </Grid>
+  </Wrapper>
   );
 };
 
