@@ -18,32 +18,8 @@ const FacilitiesPage = () => {
         <div>
           <HeaderComp />
         </div>
-        <section className='container'>
-          <div className='building d-flex same-style'>
-            <img src='/images/BDMIS building jpg-01 (1) 1.png' alt='' />
-            <div className='text-content'>
-              <p className='text-capitalize fs-24 fw-400 success'>
-                brighter dawn facilities
-              </p>
-              <p className='fw-light fs-14'>
-                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
-                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
-                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
-                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
-                ut .Lorem
-              </p>
-            </div>
-          </div>
+        <section className='container '>
+          
 
           <div className='library d-flex same-style'>
             <img src='/images/library jpg-01 1.png' alt='' />
@@ -52,61 +28,40 @@ const FacilitiesPage = () => {
                 Our Library Facility comes with modern Curriculum{" "}
               </p>
               <p className='fw-light fs-14'>
-                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
-                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
-                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem
+                Our air-conditioned library is fully stocked with educational
+                and informative books. In addition, we have 24 hours Internet
+                connection to access e-books online
               </p>
             </div>
           </div>
 
-          <div className='information container'>
-            <p className='text-capitalize fs-24 fw-400 mb-4 success'> Our Information Technology center (IT) for our pupil</p>
-            <img src='/images/Frame 10067.png' alt='' />
-            <p className='fw-light fs-14 text-content text-center'>
-              ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud  exercitation ullamco
-              laboris nisi ut .Lorem psum t” veniam, quis nostrud exercitation
-              ullamco laboris nisi ut .Lorem psum tsum t” veniam, quis nostrud
-              exercitation ullamco laboris nisi ut. Lorem ipsum t” ipsum t
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              .Lorem ipsum t” veniam, quis nostrud exercitation ullamco laboris
-              nisi ut .Lorem
-            </p>
+          <div className='information d-flex same-style'>
+            <img src='/images/pupils in IT lab jpg-01 1.png' alt='' />
+            <div className='text-content'>
+              <p className='text-capitalize fs-24 fw-400 success'>
+              Our Information Technology Center (ITC) for our pupil{" "}
+              </p>
+              <p className='fw-light fs-14'>
+              We take pride in our 21st century compliant IT Centre where our
+              certified IT trained staff take pupils in computer practicals and
+              coding classes
+              </p>
+            </div>
           </div>
-           
+
+          
+
           <div className='playground d-flex same-style'>
             <img src='/images/playground jpg-01 1.png' alt='' />
             <div className='text-content'>
               <p className='text-capitalize fs-24 fw-400 success'>
-              Children Playground to have an awesome fun time 
+                Children Playground to have an awesome fun time
               </p>
               <p className='fw-light fs-14'>
-                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
-                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
-                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
-                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
-                ut .Lorem
+                Here is where we have outdoor learning and recreational
+                activities. We have a swimming pool, artificial beach, swings,
+                dart board, mini basket ball court, bouncing castle, swings and
+                trampolin among others
               </p>
             </div>
           </div>
@@ -115,24 +70,13 @@ const FacilitiesPage = () => {
             <img src='/images/multi purpose hall jpg-01 1.png' alt='' />
             <div className='text-content'>
               <p className='text-capitalize fs-24 fw-400 success'>
-              our muiti-purpose hall 
+                our multi-purpose hall
               </p>
               <p className='fw-light fs-14'>
-                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
-                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
-                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
-                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
-                ut .Lorem
+                
+                Activities such as school arts exhibitions, trainings, public
+                lectures and examinations take place in the multiple-purpose
+                hall.
               </p>
             </div>
           </div>
@@ -141,28 +85,14 @@ const FacilitiesPage = () => {
             <img src='/images/pupils in the science lab jpg-01 1.png' alt='' />
             <div className='text-content'>
               <p className='text-capitalize fs-24 fw-400 success'>
-              Science laboratory
+                Science laboratory
               </p>
               <p className='fw-light fs-14'>
-                ipsum t tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut .Lorem ipsum t tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut .Lorem psum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem psum tsum t” veniam,
-                quis nostrud exercitation ullamco laboris nisi ut .Lorem ipsum
-                t” ipsum t tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut .Lorem ipsum t” veniam, quis nostrud
-                exercitation ullamco laboris nisi ut .Lorem ipsum t tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut .Lorem
-                ipsum t” veniam, quis nostrud exercitation ullamco laboris nisi
-                ut .Lorem
+                We have a modern day science Laboratory fully stocked with
+                science gadgets and facilities for all our science practicals
               </p>
             </div>
           </div>
-
         </section>
 
         <section className='container contact d-flex flex-column flex-lg-row justify-content-lg-between px-0'>

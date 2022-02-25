@@ -8,29 +8,34 @@
     img{
          width: 671px;
         height: 334px;
+        
   
         @media screen and (max-width:1200px){
           width: 100%;
         }
    }
   }
-   
+  
   .success{
      color: #28A745; 
   }
 
-  .information{
-    margin-top: 5rem;
-    .text-content{
-        margin-top: 3rem ;
-
-    }
-      img{
-         max-width: 1253px;
-          height: 570px;
-          width: 100%;
-      }
+  .text-content{
+      margin-top: 6rem;
   }
+
+//   .information{
+//     margin-top: 5rem;
+//     .text-content{
+//         margin-top: 3rem ;
+
+//     }
+//       img{
+//          max-width: 1253px;
+//           height: 570px;
+//           width: 100%;
+//       }
+//   }
 
 
 

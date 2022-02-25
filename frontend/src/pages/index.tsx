@@ -95,7 +95,7 @@ const HomePage = () => {
 												</p>
 											</p>
 											<p className="fs-18 fw-lighter ">
-												Director, Brighter Dawn School
+												Director, Brighter Dawn Montessori International School (BDMIS)
 											</p>
 										</div>
 									</div>
@@ -500,7 +500,7 @@ const cards: IHomeCard[] = [
 	{
 		image: "/images/cardIcon.svg",
 		title: "Transport Services",
-		desc: "We offer pick-up and drop-off services within Port harcourt and its environs.",
+		desc: "We offer pick-up and drop-off services within Port Harcourt and its environs.",
 	},
 ];
 
